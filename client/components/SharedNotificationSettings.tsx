@@ -13,7 +13,6 @@ import Header from "./Header";
 import { Form } from "@/components/ui/form";
 import { CustomFormField } from "./CustomFormField";
 import { Button } from "@/components/ui/button";
-import { Switch } from "./ui/switch";
 
 const SharedNotificationSettings = ({
   title = "Notification Settings",
@@ -82,6 +81,7 @@ const SharedNotificationSettings = ({
               label="SMS Alerts"
               type="switch"
             />
+
             <CustomFormField
               name="notificationFrequency"
               label="Notification Frequency"

@@ -17,7 +17,7 @@ const Navbar = ({ isCoursePage }: { isCoursePage: boolean }) => {
       <div className="dashboard-navbar__container">
         <div className="dashboard-navbar__search">
           <div className="md:hidden">
-            {/* <SidebarTrigger className="dashboard-navbar__sidebar-trigger" /> */}
+            <SidebarTrigger className="dashboard-navbar__sidebar-trigger" />
           </div>
 
           <div className="flex items-center gap-4">
