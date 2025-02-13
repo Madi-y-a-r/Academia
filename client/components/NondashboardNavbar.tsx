@@ -2,14 +2,24 @@
 
 import { SignedIn, SignedOut, UserButton, useUser } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
-import { Bell, BookOpen } from "lucide-react";
+import { Bell, BookOpen, LayoutDashboardIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useLocale, useTranslations } from "next-intl";
+import { Button } from "./ui/button";
+import { useRouter } from "next/navigation";
 
 const NonDashboardNavbar = () => {
+  const router = useRouter();
   const { user } = useUser();
   const userRole = user?.publicMetadata?.userType as "student" | "teacher";
-  console.log(user?.publicMetadata?.userType as "student" | "teacher")
+  const t = useTranslations('NonDashboardNavbar');
+  const locale = useLocale();
+
+  const handleGoDashboard = () => {
+    router.push(`/${locale}/${userRole}/courses`)
+  }
   return (
     <nav className="nondashboard-navbar">
       <div className="nondashboard-navbar__container">
@@ -24,8 +34,8 @@ const NonDashboardNavbar = () => {
                 className="nondashboard-navbar__search-input"
                 scroll={false}
               >
-                <span className="hidden sm:inline">Search Courses</span>
-                <span className="sm:hidden">Search</span>
+                <span className="hidden sm:inline">{t("searchCourses")}</span>
+                <span className="sm:hidden">{t("search")}</span>
               </Link>
               <BookOpen
                 className="nondashboard-navbar__search-icon"
@@ -35,6 +45,11 @@ const NonDashboardNavbar = () => {
           </div>
         </div>
         <div className="nondashboard-navbar__actions">
+          <Button onClick={handleGoDashboard} size="lg" className="font-bold bg-primary-700 hover:bg-primary-800 px-4 py-2 rounded-md;">
+              <p>Dashboard</p>
+              <LayoutDashboardIcon />
+          </Button>
+          <LanguageSwitcher />
           <button className="nondashboard-navbar__notification-button">
             <span className="nondashboard-navbar__notification-indicator"></span>
             <Bell className="nondashboard-navbar__notification-icon" />
@@ -62,14 +77,14 @@ const NonDashboardNavbar = () => {
               className="nondashboard-navbar__auth-button--login"
               scroll={false}
             >
-              Log in
+              {t("login")}
             </Link>
             <Link
               href="/signup"
               className="nondashboard-navbar__auth-button--signup"
               scroll={false}
             >
-              Sign up
+              {t("signUp")}
             </Link>
           </SignedOut>
         </div>

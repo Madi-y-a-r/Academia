@@ -7,10 +7,13 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { cn } from "@/lib/utils";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslations } from "next-intl";
 
 const Navbar = ({ isCoursePage }: { isCoursePage: boolean }) => {
   const { user } = useUser();
   const userRole = user?.publicMetadata?.userType as "student" | "teacher";
+  const t = useTranslations("Navbar")
 
   return (
     <nav className="dashboard-navbar">
@@ -29,8 +32,8 @@ const Navbar = ({ isCoursePage }: { isCoursePage: boolean }) => {
                 })}
                 scroll={false}
               >
-                <span className="hidden sm:inline">Search Courses</span>
-                <span className="sm:hidden">Search</span>
+                <span className="hidden sm:inline">{t("searchCourses")}</span>
+                <span className="sm:hidden">{t("search")}</span>
               </Link>
               <BookOpen className="nondashboard-navbar__search-icon" size={18} />
             </div>
@@ -38,6 +41,7 @@ const Navbar = ({ isCoursePage }: { isCoursePage: boolean }) => {
         </div>
 
         <div className="dashboard-navbar__actions">
+          <LanguageSwitcher />
           <button className="nondashboard-navbar__notification-button">
             <span className="nondashboard-navbar__notification-indicator"></span>
             <Bell className="nondashboard-navbar__notification-icon" />

@@ -1,0 +1,95 @@
+{
+    "NonDashboardNavbar": {
+        "searchCourses": "Курстарды іздеу",
+        "search": "Іздеу",
+        "login": "Кіру",
+        "signUp": "Тіркелу"
+    },
+    "Navbar": {
+        "searchCourses": "Курстарды іздеу",
+        "search": "Іздеу"
+    },
+    "Sidebar": {
+        "Courses": "Курстар",
+        "Billing": "Төлемдер",
+        "Profile": "Профиль",
+        "Settings": "Баптаулар",
+        "Sign out": "Шығу"
+    },
+    "Landing": {
+        "title": "Курстар",
+        "subtitle1": "Бұл сіз тіркеле алатын курстар тізімі.",
+        "subtitle2": "Қажетті уақытта және қалаған кезде курстар.",
+        "buttonLabel": "Курстарды іздеу",
+        "feautredTitle": "Танымал курстар",
+        "feauturedDescription": "Бастапқыдан кәсіби деңгейге дейін, барлық салалар бойынша бізде сізге арналған курстар бар және сіздің оқу сапарыңызды барынша тиімді етуге дайынбыз.",
+        "tags": [
+            "веб-әзірлеу",
+            "кәсіпорын IT",
+            "React Next.js",
+            "JavaScript",
+            "backend әзірлеу"
+        ]
+    },
+    "Footer": {
+        "allRightsReserved": "Барлық құқықтар қорғалған.", 
+        "about": "Біз туралы",
+        "privacyPolicy": "Құпиялылық саясаты",
+        "licensing": "Лицензиялар",
+        "contact": "Байланыс"
+    },
+    "SearchPage": {
+        "title": "Қолжетімді курстар тізімі",
+        "subtitle": "курс қолжетімді"
+    },
+    "TeacherCoursesPage": {
+        "title": "Курстар",
+        "subtitle": "Өзіңіздің курстарыңызды қарап шығыңыз",
+        "create": "Курс жасау"
+    },
+    "TeacherSettingsPage": {
+        "title": "Мұғалім параметрлері",
+        "subtitle": "Мұғалімнің хабарландыру параметрлерін басқару"
+    },
+    "StudentCoursesPage": {
+        "title": "Менің курстарым",
+        "subtitle": "Қатысып жатқан курстарыңызды қараңыз"
+    },
+    "StudentSettingsPage": {
+        "title": "Пайдаланушы параметрлері",
+        "subtitle": "Пайдаланушының хабарландыру параметрлерін басқару"
+    },
+    "Settings": {
+        "Course Notifications": "Курс хабарландырулары",
+        "Email Alerts": "Email хабарландырулары",
+        "SMS Alerts": "SMS хабарландырулары",
+        "Notification Frequency": "Хабарландыру жиілігі",
+        "Immediate": "Лезде",
+        "Daily": "Күн сайын",
+        "Weekly": "Апта сайын",
+        "Update Settings": "Баптауларды жаңарту"
+    },
+    "Payment": {
+        "title": "Төлем тарихы",
+        "Payment Type": "Төлем түрі",
+        "All Types": "Барлық түрлері",
+        "Date": "Күні",
+        "Amount": "Сомасы",
+        "Payment Method": "Төлем әдісі",
+        "notfound": "Көрсетілетін транзакциялар жоқ"
+    },
+    "ToolBar": {
+        "inputPlaceholder": "Курстарды іздеу",
+        "categories": "Санаттар",
+        "allCategories": "Барлық санаттар",
+        "technology": "Технологиялар",
+        "science": "Ғылым",
+        "mathematics": "Математика",
+        "artificial-intelligence": "Жасанды интеллект"
+    },
+    "ProfilePage": {
+        "title": "Профиль",
+        "subtitle": "Профиліңізді қараңыз"
+    },
+    "Loading": "Күте тұрыңыз.."
+}

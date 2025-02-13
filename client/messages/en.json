@@ -1,0 +1,95 @@
+{
+    "NonDashboardNavbar": {
+        "searchCourses": "Search Courses",
+        "search": "Search",
+        "login": "Log in",
+        "signUp": "Sign Up"
+    },
+    "Navbar": {
+        "searchCourses": "Search Courses",
+        "search": "Search"
+    },
+    "Sidebar": {
+        "Courses": "Courses",
+        "Billing": "Billing",
+        "Profile": "Profile",
+        "Settings": "Settings",
+        "Sign out": "Sign out"
+    },
+    "Landing": {
+        "title": "Courses",
+        "subtitle1": "This is the list of the courses you can enroll in.",
+        "subtitle2": "Courses when you need them and want them.",
+        "buttonLabel": "Search for Courses",
+        "feautredTitle": "Featured Courses",
+        "feauturedDescription": "From beginner to advanced, in all industries, we have the right courses just for you and preparing your entire journey for learning and making the most.",
+        "tags": [
+            "web development",
+            "enterprise IT",
+            "React Next.js",
+            "JavaScript",
+            "backend development"
+        ]
+    },
+    "Footer": {
+        "allRightsReserved": "All Rights Reserved.", 
+        "about": "About",
+        "privacyPolicy": "Privacy Policy",
+        "licensing": "Licensing",
+        "contact": "Contact"
+    },
+    "SearchPage": {
+        "title": "List of available courses",
+        "subtitle": "courses avaiable"
+    },
+    "TeacherCoursesPage": {
+        "title": "Courses",
+        "subtitle": "Browse your courses",
+        "create": "Create Course"
+    },
+    "TeacherSettingsPage": {
+        "title": "Teacher Settings",
+        "subtitle": "Manage your teacher notification settings"
+    },
+    "StudentCoursesPage": {
+        "title": "My Courses",
+        "subtitle": "View your enrolled courses"
+    },
+    "StudentSettingsPage": {
+        "title": "User Settings",
+        "sudtitle": "Manage your user notification settings"
+    },
+    "Settings": {
+        "Course Notifications": "Course Notifications",
+        "Email Alerts": "Email Alerts",
+        "SMS Alerts": "SMS Alerts",
+        "Notification Frequency": "Notification Frequency",
+        "Immediate": "Immediate",
+        "Daily": "Daily",
+        "Weekly": "Weekly",
+        "Update Settings": "Update Settings"
+    },
+    "Payment": {
+        "title": "Payment History",
+        "Payment Type": "Payment Type",
+        "All Types": "All Types", 
+        "Date": "Date",
+        "Amount": "Amount",
+        "Payment Method": "Payment Method",
+        "notfound": "No transactions to display"
+    },
+    "ToolBar": {
+        "inputPlaceholder": "Search courses",
+        "categories": "Categories",
+        "allCategories": "All Categories",
+        "technology": "Technology",
+        "science": "Science",
+        "mathematics": "Mathematics",
+        "artificial-intelligence": "Artificial Intelligence"
+    },
+    "ProfilePage": {
+        "title": "Profile",
+        "subtitle": "View your profile"
+    },
+    "Loading": "Loading..."
+}

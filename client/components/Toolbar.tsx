@@ -7,10 +7,11 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { courseCategories } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 
 const Toolbar = ({ onSearch, onCategoryChange }: ToolbarProps) => {
   const [searchTerm, setSearchTerm] = useState("");
-
+  const t = useTranslations("ToolBar")
   const handleSearch = (value: string) => {
     setSearchTerm(value);
     onSearch(value);
@@ -22,16 +23,16 @@ const Toolbar = ({ onSearch, onCategoryChange }: ToolbarProps) => {
         type="text"
         value={searchTerm}
         onChange={(e) => handleSearch(e.target.value)}
-        placeholder="Search courses"
+        placeholder={t("inputPlaceholder")}
         className="toolbar__search"
       />
       <Select onValueChange={onCategoryChange}>
         <SelectTrigger className="toolbar__select">
-          <SelectValue placeholder="Categories" />
+          <SelectValue placeholder={t("categories")} />
         </SelectTrigger>
         <SelectContent className="bg-customgreys-primarybg hover:bg-customgreys-primarybg">
           <SelectItem value="all" className="toolbar__select-item">
-            All Categories
+            {t("allCategories")}
           </SelectItem>
           {courseCategories.map((category) => (
             <SelectItem
@@ -39,7 +40,7 @@ const Toolbar = ({ onSearch, onCategoryChange }: ToolbarProps) => {
               value={category.value}
               className="toolbar__select-item"
             >
-              {category.label}
+              {t(category.value)}
             </SelectItem>
           ))}
         </SelectContent>
