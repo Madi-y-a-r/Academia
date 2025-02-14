@@ -13,8 +13,10 @@ import { CreditCard } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCreateTransactionMutation } from "@/state/api";
 import { toast } from "sonner";
+import { useTranslations } from "next-intl";
 
 const PaymentPageContent = () => {
+  const t = useTranslations("Payment")
   const stripe = useStripe();
   const elements = useElements();
   const [createTransaction] = useCreateTransactionMutation();
@@ -81,18 +83,18 @@ const PaymentPageContent = () => {
             className="payment__form"
           >
             <div className="payment__content">
-              <h1 className="payment__title">Checkout</h1>
+              <h1 className="payment__title">{t("Checkout")}</h1>
               <p className="payment__subtitle">
-                Fill out the payment details below to complete your purchase.
+                {t("subtitle2")}
               </p>
 
               <div className="payment__method">
-                <h3 className="payment__method-title">Payment Method</h3>
+                <h3 className="payment__method-title">{t("Payment Method")}</h3>
 
                 <div className="payment__card-container">
                   <div className="payment__card-header">
                     <CreditCard size={24} />
-                    <span>Credit/Debit Card</span>
+                    <span>{t("Credit/Debit Card")}</span>
                   </div>
                   <div className="payment__card-element">
                     <PaymentElement />
@@ -112,7 +114,7 @@ const PaymentPageContent = () => {
           variant="outline"
           type="button"
         >
-          Switch Account
+          {t("Switch Account")}
         </Button>
 
         <Button
@@ -121,7 +123,7 @@ const PaymentPageContent = () => {
           className="payment__submit"
           disabled={!stripe || !elements}
         >
-          Pay with Credit Card
+          {t("Pay with Credit Card")}
         </Button>
       </div>
     </div>

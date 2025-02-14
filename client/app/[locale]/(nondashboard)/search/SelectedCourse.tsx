@@ -1,15 +1,17 @@
 import AccordionSections from "@/components/AccordionSections";
 import { Button } from "@/components/ui/button";
 import { formatPrice } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 import React from "react";
 
 const SelectedCourse = ({ course, handleEnrollNow }: SelectedCourseProps) => {
+  const t = useTranslations("Course")
   return (
     <div className="selected-course">
       <div>
         <h3 className="selected-course__title">{course.title}</h3>
         <p className="selected-course__author">
-          By {course.teacherName} |{" "}
+          {t("By")} {course.teacherName} |{" "}
           <span className="selected-course__enrollment-count">
             {course?.enrollments?.length}
           </span>
@@ -20,7 +22,7 @@ const SelectedCourse = ({ course, handleEnrollNow }: SelectedCourseProps) => {
         <p className="selected-course__description">{course.description}</p>
 
         <div className="selected-course__sections">
-          <h4 className="selected-course__sections-title">Course Content</h4>
+          <h4 className="selected-course__sections-title">{t("Course Content")}</h4>
           <AccordionSections sections={course.sections} />
         </div>
 
@@ -32,7 +34,7 @@ const SelectedCourse = ({ course, handleEnrollNow }: SelectedCourseProps) => {
             onClick={() => handleEnrollNow(course.courseId)}
             className="bg-primary-700 hover:bg-primary-600"
           >
-            Enroll Now
+            {t("Enroll Now")}
           </Button>
         </div>
       </div>

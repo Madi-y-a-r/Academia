@@ -7,7 +7,8 @@ import { cn } from "@/lib/utils";
 import { useUser } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import ChaptersSidebar from "./user/courses/[courseId]/ChaptersSidebar";
+import ChaptersSidebar from "./student/courses/[courseId]/ChaptersSidebar";
+import { useLocale } from "next-intl";
 
 export default function DashboardLayout({
   children,
@@ -15,15 +16,14 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
+  const locale = useLocale();
   const [courseId, setCourseId] = useState<string | null>(null);
   const { user, isLoaded } = useUser();
-  const isCoursePage = /^\/user\/courses\/[^\/]+(?:\/chapters\/[^\/]+)?$/.test(
-    pathname
-  );
+  const isCoursePage = /^\/[a-z]{2}\/student\/courses\/[^\/]+(?:\/chapters\/[^\/]+)?$/.test(pathname);
 
   useEffect(() => {
     if (isCoursePage) {
-      const match = pathname.match(/\/user\/courses\/([^\/]+)/);
+      const match = pathname.match(/^\/[a-z]{2}\/student\/courses\/([^\/]+)/);
       setCourseId(match ? match[1] : null);
     } else {
       setCourseId(null);

@@ -46,7 +46,7 @@ const ChaptersSidebar = () => {
   };
 
   const handleChapterClick = (sectionId: string, chapterId: string) => {
-    router.push(`/user/courses/${courseId}/chapters/${chapterId}`, {
+    router.push(`/student/courses/${courseId}/chapters/${chapterId}`, {
       scroll: false,
     });
   };

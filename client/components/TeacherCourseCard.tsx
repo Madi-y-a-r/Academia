@@ -10,6 +10,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { Pencil, Trash2 } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const TeacherCourseCard = ({
   course,
@@ -17,6 +18,7 @@ const TeacherCourseCard = ({
   onDelete,
   isOwner,
 }: TeacherCourseCardProps) => {
+  const t = useTranslations("TeacherCoursesPage.CourseCard")
   return (
     <Card className="course-card-teacher group">
       <CardHeader className="course-card-teacher__header">
@@ -58,7 +60,7 @@ const TeacherCourseCard = ({
               <span className="font-bold text-white-100">
                 {course.enrollments.length}
               </span>{" "}
-              Student{course.enrollments.length > 1 ? "s" : ""} Enrolled
+              {t("Students Enrolled")}
             </p>
           )}
         </div>
@@ -72,7 +74,7 @@ const TeacherCourseCard = ({
                   onClick={() => onEdit(course)}
                 >
                   <Pencil className="w-4 h-4 mr-2" />
-                  Edit
+                  {t("Edit")}
                 </Button>
               </div>
               <div>
@@ -81,12 +83,12 @@ const TeacherCourseCard = ({
                   onClick={() => onDelete(course)}
                 >
                   <Trash2 className="w-4 h-4 mr-2" />
-                  Delete
+                  {t("Delete")}
                 </Button>
               </div>
             </>
           ) : (
-            <p className="text-sm text-gray-500 italic">View Only</p>
+            <p className="text-sm text-gray-500 italic">{t("View Only")}</p>
           )}
         </div>
       </CardContent>

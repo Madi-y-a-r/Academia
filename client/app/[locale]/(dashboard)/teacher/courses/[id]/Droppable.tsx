@@ -11,8 +11,10 @@ import {
   openSectionModal,
   openChapterModal,
 } from "@/state";
+import { useTranslations } from "next-intl";
 
 export default function DroppableComponent() {
+  const t = useTranslations("TeacherCoursesPage.Chapter")
   const dispatch = useAppDispatch();
   const { sections } = useAppSelector((state) => state.global.courseEditor);
 
@@ -120,7 +122,7 @@ export default function DroppableComponent() {
                     >
                       <Plus className="add-chapter-button__icon" />
                       <span className="add-chapter-button__text">
-                        Add Chapter
+                        {t("Add Chapter")}
                       </span>
                     </Button>
                   </div>

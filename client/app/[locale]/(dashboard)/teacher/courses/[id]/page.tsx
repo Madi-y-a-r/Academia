@@ -25,10 +25,12 @@ import { useForm } from "react-hook-form";
 import DroppableComponent from "./Droppable";
 import ChapterModal from "./ChapterModal";
 import SectionModal from "./SectionModal";
+import { useTranslations } from "next-intl";
 
 const CourseEditor = () => {
   const router = useRouter();
   const params = useParams();
+  const t = useTranslations("TeacherCoursesPage.CourseEditPage")
   const id = params.id as string;
   const { data: course, isLoading, refetch } = useGetCourseQuery(id);
   const [updateCourse] = useUpdateCourseMutation();
@@ -90,20 +92,20 @@ const CourseEditor = () => {
           onClick={() => router.push("/teacher/courses", { scroll: false })}
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Back to Courses</span>
+          <span>{t("Back to Courses")}</span>
         </button>
       </div>
 
       <Form {...methods}>
         <form onSubmit={methods.handleSubmit(onSubmit)}>
           <Header
-            title="Course Setup"
-            subtitle="Complete all fields and save your course"
+            title={t("Course Setup")}
+            subtitle={t("subtitle")}
             rightElement={
               <div className="flex items-center space-x-4">
                 <CustomFormField
                   name="courseStatus"
-                  label={methods.watch("courseStatus") ? "Published" : "Draft"}
+                  label={methods.watch("courseStatus") ? t("Published") : t("Draft")}
                   type="switch"
                   className="flex items-center space-x-2"
                   labelClassName={`text-sm font-medium ${
@@ -118,8 +120,8 @@ const CourseEditor = () => {
                   className="bg-primary-700 hover:bg-primary-600"
                 >
                   {methods.watch("courseStatus")
-                    ? "Update Published Course"
-                    : "Save Draft"}
+                    ? t("Update Published Course")
+                    : t("Save Draft")}
                 </Button>
               </div>
             }
@@ -130,33 +132,33 @@ const CourseEditor = () => {
               <div className="space-y-4">
                 <CustomFormField
                   name="courseTitle"
-                  label="Course Title"
+                  label={t("Course Title")}
                   type="text"
-                  placeholder="Write course title here"
+                  placeholder={t("Write course title here")}
                   className="border-none"
                   initialValue={course?.title}
                 />
 
                 <CustomFormField
                   name="courseDescription"
-                  label="Course Description"
+                  label={t("Course Description")}
                   type="textarea"
-                  placeholder="Write course description here"
+                  placeholder={t("Write course description here")}
                   initialValue={course?.description}
                 />
 
                 <CustomFormField
                   name="courseCategory"
-                  label="Course Category"
+                  label={t("Course Category")}
                   type="select"
-                  placeholder="Select category here"
+                  placeholder={t("Select category here")}
                   options={[
-                    { value: "technology", label: "Technology" },
-                    { value: "science", label: "Science" },
-                    { value: "mathematics", label: "Mathematics" },
+                    { value: "technology", label: t("Technology") },
+                    { value: "science", label: t("Science") },
+                    { value: "mathematics", label: t("Mathematics") },
                     {
                       value: "Artificial Intelligence",
-                      label: "Artificial Intelligence",
+                      label: t("Artificial Intelligence"),
                     },
                   ]}
                   initialValue={course?.category}
@@ -164,7 +166,7 @@ const CourseEditor = () => {
 
                 <CustomFormField
                   name="coursePrice"
-                  label="Course Price"
+                  label={t("Course Price")}
                   type="number"
                   placeholder="0"
                   initialValue={course?.price}
@@ -175,7 +177,7 @@ const CourseEditor = () => {
             <div className="bg-customgreys-darkGrey mt-4 md:mt-0 p-4 rounded-lg basis-1/2">
               <div className="flex justify-between items-center mb-2">
                 <h2 className="text-2xl font-semibold text-secondary-foreground">
-                  Sections
+                  {t("Sections")}
                 </h2>
 
                 <Button
@@ -189,17 +191,17 @@ const CourseEditor = () => {
                 >
                   <Plus className="mr-1 h-4 w-4 text-primary-700 group-hover:white-100" />
                   <span className="text-primary-700 group-hover:white-100">
-                    Add Section
+                    {t("Add Section")}
                   </span>
                 </Button>
               </div>
 
               {isLoading ? (
-                <p>Loading course content...</p>
+                <p>{t("Loading course content")}</p>
               ) : sections.length > 0 ? (
                 <DroppableComponent />
               ) : (
-                <p>No sections available</p>
+                <p>{t("No sections available")}</p>
               )}
             </div>
           </div>

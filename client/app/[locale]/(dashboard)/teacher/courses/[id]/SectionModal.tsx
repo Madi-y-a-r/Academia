@@ -7,12 +7,14 @@ import { addSection, closeSectionModal, editSection } from "@/state";
 import { useAppDispatch, useAppSelector } from "@/state/redux";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { X } from "lucide-react";
+import { useTranslations } from "next-intl";
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { v4 as uuidv4 } from "uuid";
 
 const SectionModal = () => {
+  const t = useTranslations("TeacherCoursesPage.Section")
   const dispatch = useAppDispatch();
   const { isSectionModalOpen, selectedSectionIndex, sections } = useAppSelector(
     (state) => state.global.courseEditor
@@ -67,7 +69,7 @@ const SectionModal = () => {
     }
 
     toast.success(
-      `Section added/updated successfully but you need to save the course to apply the changes`
+      t("success")
     );
     onClose();
   };
@@ -76,7 +78,7 @@ const SectionModal = () => {
     <CustomModal isOpen={isSectionModalOpen} onClose={onClose}>
       <div className="section-modal">
         <div className="section-modal__header">
-          <h2 className="section-modal__title">Add/Edit Section</h2>
+          <h2 className="section-modal__title">{t("Add/Edit Section")}</h2>
           <button onClick={onClose} className="section-modal__close">
             <X className="w-6 h-6" />
           </button>
@@ -89,23 +91,23 @@ const SectionModal = () => {
           >
             <CustomFormField
               name="title"
-              label="Section Title"
-              placeholder="Write section title here"
+              label={t("Section Title")}
+              placeholder={t("Write section title here")}
             />
 
             <CustomFormField
               name="description"
-              label="Section Description"
+              label={t("Section Description")}
               type="textarea"
-              placeholder="Write section description here"
+              placeholder={t("Write section description here")}
             />
 
             <div className="section-modal__actions">
               <Button type="button" variant="outline" onClick={onClose}>
-                Cancel
+                {t("Cancel")}
               </Button>
               <Button type="submit" className="bg-primary-700">
-                Save
+                {t("Save")}
               </Button>
             </div>
           </form>

@@ -3,7 +3,7 @@ import createMiddleware from "next-intl/middleware";
 import { NextResponse } from "next/server";
 import { routing } from "./i18n/routing";
 
-const isStudentRoute = createRouteMatcher(["/user/(.*)"]);
+const isStudentRoute = createRouteMatcher(["/student/(.*)"]);
 const isTeacherRoute = createRouteMatcher(["/teacher/(.*)"]);
 
 const intlMiddleware = createMiddleware(routing);
@@ -27,7 +27,7 @@ export default clerkMiddleware(async (auth, req) => {
 
   if (isTeacherRoute(req)) {
     if (userRole !== "teacher") {
-      const url = new URL("/user/courses", req.url);
+      const url = new URL("/student/courses", req.url);
       return NextResponse.redirect(url);
     }
   }

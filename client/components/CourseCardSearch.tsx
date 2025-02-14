@@ -1,4 +1,5 @@
 import { formatPrice } from "@/lib/utils";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import React from "react";
 
@@ -7,6 +8,7 @@ const CourseCardSearch = ({
   isSelected,
   onClick,
 }: SearchCourseCardProps) => {
+  const t = useTranslations("Course")
   return (
     <div
       onClick={onClick}
@@ -34,13 +36,13 @@ const CourseCardSearch = ({
           </p>
         </div>
         <div className="mt-2">
-          <p className="course-card-search__teacher">By {course.teacherName}</p>
+          <p className="course-card-search__teacher">{t("By")} {course.teacherName}</p>
           <div className="course-card-search__footer">
             <span className="course-card-search__price">
               {formatPrice(course.price)}
             </span>
             <span className="course-card-search__enrollment">
-              {course.enrollments?.length} Enrolled
+              {course.enrollments?.length} {t("Enrolled")}
             </span>
           </div>
         </div>

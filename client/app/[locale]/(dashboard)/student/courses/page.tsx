@@ -45,13 +45,13 @@ const Courses = () => {
     ) {
       const firstChapter = course.sections[0].chapters[0];
       router.push(
-        `/user/courses/${course.courseId}/chapters/${firstChapter.chapterId}`,
+        `/student/courses/${course.courseId}/chapters/${firstChapter.chapterId}`,
         {
           scroll: false,
         }
       );
     } else {
-      router.push(`/user/courses/${course.courseId}`, {
+      router.push(`/student/courses/${course.courseId}`, {
         scroll: false,
       });
     }
@@ -60,7 +60,7 @@ const Courses = () => {
   if (!isLoaded || isLoading) return <Loading />;
   if (!user) return <div>Please sign in to view your courses.</div>;
   if (isError || !courses || courses.length === 0)
-    return <div>You are not enrolled in any courses yet.</div>;
+    return <div>{t("No Courses")}</div>;
 
   return (
     <div className="user-courses">

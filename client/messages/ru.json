@@ -3,7 +3,8 @@
         "searchCourses": "Поиск курсов",
         "search": "Поиск",
         "login": "Войти",
-        "signUp": "Регистрация"
+        "signUp": "Регистрация",
+        "Dashboard": "Dashboard"
     },
     "Navbar": {
         "searchCourses": "Поиск курсов",
@@ -32,7 +33,7 @@
         ]
     },
     "Footer": {
-        "allRightsReserved": "Все права защищены.", 
+        "allRightsReserved": "Все права защищены.",
         "about": "О нас",
         "privacyPolicy": "Политика конфиденциальности",
         "licensing": "Лицензии",
@@ -45,7 +46,64 @@
     "TeacherCoursesPage": {
         "title": "Курсы",
         "subtitle": "Просмотрите ваши курсы",
-        "create": "Создать курс"
+        "create": "Создать курс",
+        "confirm": "Вы уверены, что хотите удалить этот курс?",
+        "Unknown Teacher": "Неизвестный преподаватель",
+        "CourseCard": {
+            "Published": "Опубликовано",
+            "Students Enrolled": "Записанных студентов",
+            "Edit": "Редактировать",
+            "Delete": "Удалить",
+            "View Only": "Только просмотр"
+        },
+        "CourseEditPage": {
+            "Back to Courses": "Назад к курсам",
+            "Course Setup": "Настройка курса",
+            "subtitle": "Заполните все поля и сохраните курс",
+            "Published": "Опубликовано",
+            "Draft": "Черновик",
+            "Update Published Course": "Обновить опубликованный курс",
+            "Save Draft": "Сохранить черновик",
+            "Course Title": "Название курса",
+            "Write course title here": "Введите название курса здесь",
+            "Course Description": "Описание курса",
+            "Write course description here": "Введите описание курса здесь",
+            "Course Category": "Категория курса",
+            "Select category here": "Выберите категорию здесь",
+            "Technology": "Технологии",
+            "Science": "Наука",
+            "Mathematics": "Математика",
+            "Artificial Intelligence": "Искусственный интеллект",
+            "Course Price": "Цена курса",
+            "Sections": "Разделы",
+            "Add Section": "Добавить раздел",
+            "Loading course content": "Загрузка содержимого курса...",
+            "No sections available": "Разделы отсутствуют"
+        },
+        "Section": {
+            "success": "Раздел успешно добавлен/обновлен, но необходимо сохранить курс для применения изменений",
+            "Add/Edit Section": "Добавить/Редактировать раздел",
+            "Section Title": "Название раздела",
+            "Write section title here": "Введите название раздела здесь",
+            "Section Description": "Описание раздела",
+            "Write section description here": "Введите описание раздела здесь",
+            "Cancel": "Отмена",
+            "Save": "Сохранить"
+        },
+        "Chapter": {
+            "success": "Глава успешно добавлена/обновлена, но необходимо сохранить курс для применения изменений",
+            "Add/Edit Chapter": "Добавить/Редактировать главу",
+            "Chapter Title": "Название главы",
+            "Write chapter title here": "Введите название главы здесь",
+            "Chapter Content": "Содержание главы",
+            "Write chapter content here": "Введите содержание главы здесь",
+            "Chapter Video": "Видео главы",
+            "Current video:": "Текущее видео:",
+            "Selected file:": "Выбранный файл:",
+            "Cancel": "Отмена",
+            "Save": "Сохранить",
+            "Add Chapter": "Добавить главу"
+        }
     },
     "TeacherSettingsPage": {
         "title": "Настройки преподавателя",
@@ -53,7 +111,8 @@
     },
     "StudentCoursesPage": {
         "title": "Мои курсы",
-        "subtitle": "Просмотр записанных курсов"
+        "subtitle": "Просмотр записанных курсов",
+        "No courses": "Вы еще не записались на курсы"
     },
     "StudentSettingsPage": {
         "title": "Настройки пользователя",
@@ -76,7 +135,19 @@
         "Date": "Дата",
         "Amount": "Сумма",
         "Payment Method": "Способ оплаты",
-        "notfound": "Нет транзакций для отображения"
+        "notfound": "Нет транзакций для отображения",
+
+        "Guest Checkout": "Гостевая оплата",
+        "subtitle": "Введите email, чтобы получить данные доступа к курсу и подтверждение заказа. Вы сможете создать аккаунт после покупки.",
+        "Email address": "Адрес электронной почты",
+        "Continue as Guest": "Продолжить как гость",
+        "Or": "Или",
+
+        "Checkout": "Оформление заказа",
+        "subtitle2": "Заполните платежные данные ниже, чтобы завершить покупку.",
+        "Credit/Debit Card": "Кредитная/Дебетовая карта",
+        "Switch Account": "Сменить аккаунт",
+        "Pay with Credit Card": "Оплатить картой"
     },
     "ToolBar": {
         "inputPlaceholder": "Поиск курсов",
@@ -87,10 +158,19 @@
         "mathematics": "Математика",
         "artificial-intelligence": "Искусственный интеллект"
     },
-    
     "ProfilePage": {
         "title": "Профиль",
         "subtitle": "Просмотр профиля"
     },
-     "Loading": "Загрузка..."
+    "LoadingPage": {
+        "loading": "Загрузка..."
+    },
+    "Course": {
+        "Enrolled": "Записаны",
+        "By": "От",
+        "Course Content": "Содержание курса",
+        "Enroll Now": "Записаться",
+        "Price Details": "Детали стоимости",
+        "Total Amount": "Итоговая сумма"
+    }
 }

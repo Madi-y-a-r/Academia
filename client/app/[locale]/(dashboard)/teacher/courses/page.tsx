@@ -51,7 +51,7 @@ const Courses = () => {
   };
 
   const handleDelete = async (course: Course) => {
-    if (window.confirm("Are you sure you want to delete this course?")) {
+    if (window.confirm(t("confirm"))) {
       await deleteCourse(course.courseId).unwrap();
     }
   };
@@ -61,7 +61,7 @@ const Courses = () => {
 
     const result = await createCourse({
       teacherId: user.id,
-      teacherName: user.fullName || "Unknown Teacher",
+      teacherName: user.fullName || t("Unknown Teacher"),
     }).unwrap();
     router.push(`/teacher/courses/${result.courseId}`, {
       scroll: false,
