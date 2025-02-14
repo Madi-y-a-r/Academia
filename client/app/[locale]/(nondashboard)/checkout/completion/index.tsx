@@ -21,13 +21,13 @@ const CompletionPage = () => {
         <p>
           Need help? Contact our{" "}
           <Button variant="link" asChild className="p-0 m-0 text-primary-700">
-            <a href="mailto:support@example.com">customer support</a>
+            <a href="mailto:madiyar.galymbek@gamil.com">customer support</a>
           </Button>
           .
         </p>
       </div>
       <div className="completion__action">
-        <Link href="user/courses" scroll={false}>
+        <Link href="student/courses" scroll={false}>
           Go to Courses
         </Link>
       </div>

@@ -50,7 +50,7 @@ const Navbar = ({ isCoursePage }: { isCoursePage: boolean }) => {
 
         <div className="dashboard-navbar__actions">
           <Button onClick={handleGoHome} size="lg" className="font-bold bg-primary-700 hover:bg-primary-800 px-4 py-2 rounded-md;">
-              <p>Home</p>
+              <p>{t("Home")}</p>
               <LayoutDashboardIcon />
           </Button>
           <LanguageSwitcher />

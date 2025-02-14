@@ -4,11 +4,12 @@
         "search": "Іздеу",
         "login": "Кіру",
         "signUp": "Тіркелу",
-        "Dashboard": "Dashboard"
+        "Dashboard": "Тақта"
     },
     "Navbar": {
         "searchCourses": "Курстарды іздеу",
-        "search": "Іздеу"
+        "search": "Іздеу",
+        "Home": "Басты бетке"
     },
     "Sidebar": {
         "Courses": "Курстар",
@@ -116,8 +117,7 @@
     },
     "StudentSettingsPage": {
         "title": "Пайдаланушы параметрлері",
-        "subtitle": "Пайдаланушының хабарландыру параметрлерін басқару",
-        "sudtitle": "Manage your user notification settings"
+        "subtitle": "Пайдаланушының хабарландыру параметрлерін басқару"
     },
     "Settings": {
         "Course Notifications": "Курс хабарландырулары",

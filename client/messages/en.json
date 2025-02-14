@@ -8,7 +8,8 @@
     },
     "Navbar": {
         "searchCourses": "Search Courses",
-        "search": "Search"
+        "search": "Search",
+        "Home": "Home page"
     },
     "Sidebar": {
         "Courses": "Courses",

@@ -4,11 +4,12 @@
         "search": "Поиск",
         "login": "Войти",
         "signUp": "Регистрация",
-        "Dashboard": "Dashboard"
+        "Dashboard": "Панель"
     },
     "Navbar": {
         "searchCourses": "Поиск курсов",
-        "search": "Поиск"
+        "search": "Поиск",
+        "Home": "Главная страница"
     },
     "Sidebar": {
         "Courses": "Курсы",

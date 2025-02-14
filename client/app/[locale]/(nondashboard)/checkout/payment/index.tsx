@@ -13,7 +13,7 @@ import { CreditCard } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCreateTransactionMutation } from "@/state/api";
 import { toast } from "sonner";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const PaymentPageContent = () => {
   const t = useTranslations("Payment")
@@ -24,6 +24,7 @@ const PaymentPageContent = () => {
   const { course, courseId } = useCurrentCourse();
   const { user } = useUser();
   const { signOut } = useClerk();
+  const locale = useLocale();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -34,15 +35,15 @@ const PaymentPageContent = () => {
     }
 
     const baseUrl = process.env.NEXT_PUBLIC_LOCAL_URL
-      ? `http://${process.env.NEXT_PUBLIC_LOCAL_URL}`
+      ? `${process.env.NEXT_PUBLIC_LOCAL_URL}` // Теперь будет http://127.0.0.1:3000
       : process.env.NEXT_PUBLIC_VERCEL_URL
       ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
-      : undefined;
+      : `http://127.0.0.1:3000`;
 
     const result = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url:`${baseUrl}/checkout?step=3&id=${courseId}`,
+        return_url:`${baseUrl}/${locale}/checkout?step=3&id=${courseId}`,
       },
       redirect: "if_required",
     });
