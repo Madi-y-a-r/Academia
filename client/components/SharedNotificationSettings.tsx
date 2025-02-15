@@ -13,7 +13,7 @@ import Header from "./Header";
 import { Form } from "@/components/ui/form";
 import { CustomFormField } from "./CustomFormField";
 import { Button } from "@/components/ui/button";
-import { Switch } from "./ui/switch";
+import { useTranslations } from "next-intl";
 
 const SharedNotificationSettings = ({
   title = "Notification Settings",
@@ -21,7 +21,7 @@ const SharedNotificationSettings = ({
 }: SharedNotificationSettingsProps) => {
   const { user } = useUser();
   const [updateUser] = useUpdateUserMutation();
-
+  const t = useTranslations("Settings")
   const currentSettings =
     (user?.publicMetadata as { settings?: UserSettings })?.settings || {};
 
@@ -69,33 +69,34 @@ const SharedNotificationSettings = ({
           <div className="notification-settings__fields">
             <CustomFormField
               name="courseNotifications"
-              label="Course Notifications"
+              label={t("Course Notifications")}
               type="switch"
             />
             <CustomFormField
               name="emailAlerts"
-              label="Email Alerts"
+              label={t("Email Alerts")}
               type="switch"
             />
             <CustomFormField
               name="smsAlerts"
-              label="SMS Alerts"
+              label={t("SMS Alerts")}
               type="switch"
             />
+
             <CustomFormField
               name="notificationFrequency"
-              label="Notification Frequency"
+              label={t("Notification Frequency")}
               type="select"
               options={[
-                { value: "immediate", label: "Immediate" },
-                { value: "daily", label: "Daily" },
-                { value: "weekly", label: "Weekly" },
+                { value: "immediate", label: t("Immediate") },
+                { value: "daily", label: t("Daily") },
+                { value: "weekly", label: t("Weekly") },
               ]}
             />
           </div>
 
           <Button type="submit" className="notification-settings__submit">
-            Update Settings
+            {t("Update Settings")}
           </Button>
         </form>
       </Form>

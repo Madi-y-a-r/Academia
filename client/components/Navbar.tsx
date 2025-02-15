@@ -2,22 +2,33 @@
 
 import { SignedIn, SignedOut, UserButton, useUser } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
-import { Bell, BookOpen } from "lucide-react";
+import { Bell, BookOpen, LayoutDashboardIcon } from "lucide-react";
 import Link from "next/link";
 import React, { useState } from "react";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { cn } from "@/lib/utils";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useLocale, useTranslations } from "next-intl";
+import { Button } from "./ui/button";
+import { useRouter } from "next/navigation";
 
 const Navbar = ({ isCoursePage }: { isCoursePage: boolean }) => {
+  const router = useRouter();
   const { user } = useUser();
   const userRole = user?.publicMetadata?.userType as "student" | "teacher";
+  const t = useTranslations("Navbar")
+ 
+  const locale = useLocale();
 
+  const handleGoHome = () => {
+    router.push(`/${locale}/`)
+  }
   return (
     <nav className="dashboard-navbar">
       <div className="dashboard-navbar__container">
         <div className="dashboard-navbar__search">
           <div className="md:hidden">
-            {/* <SidebarTrigger className="dashboard-navbar__sidebar-trigger" /> */}
+            <SidebarTrigger className="dashboard-navbar__sidebar-trigger" />
           </div>
 
           <div className="flex items-center gap-4">
@@ -29,8 +40,8 @@ const Navbar = ({ isCoursePage }: { isCoursePage: boolean }) => {
                 })}
                 scroll={false}
               >
-                <span className="hidden sm:inline">Search Courses</span>
-                <span className="sm:hidden">Search</span>
+                <span className="hidden sm:inline">{t("searchCourses")}</span>
+                <span className="sm:hidden">{t("search")}</span>
               </Link>
               <BookOpen className="nondashboard-navbar__search-icon" size={18} />
             </div>
@@ -38,6 +49,11 @@ const Navbar = ({ isCoursePage }: { isCoursePage: boolean }) => {
         </div>
 
         <div className="dashboard-navbar__actions">
+          <Button onClick={handleGoHome} size="lg" className="font-bold bg-primary-700 hover:bg-primary-800 px-4 py-2 rounded-md;">
+              <p>{t("Home")}</p>
+              <LayoutDashboardIcon />
+          </Button>
+          <LanguageSwitcher />
           <button className="nondashboard-navbar__notification-button">
             <span className="nondashboard-navbar__notification-indicator"></span>
             <Bell className="nondashboard-navbar__notification-icon" />
@@ -54,7 +70,7 @@ const Navbar = ({ isCoursePage }: { isCoursePage: boolean }) => {
             showName={true}
             userProfileMode="navigation"
             userProfileUrl={
-              userRole === "teacher" ? "/teacher/profile" : "/user/profile"
+              userRole === "teacher" ? "/teacher/profile" : "/student/profile"
             }
           />
         </div>

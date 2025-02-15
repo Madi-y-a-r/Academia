@@ -1,0 +1,185 @@
+{
+    "NonDashboardNavbar": {
+        "searchCourses": "Search Courses",
+        "search": "Search",
+        "login": "Log in",
+        "signUp": "Sign Up",
+        "Dashboard": "Dashboard"
+    },
+    "Navbar": {
+        "searchCourses": "Search Courses",
+        "search": "Search",
+        "Home": "Home page"
+    },
+    "Sidebar": {
+        "Courses": "Courses",
+        "Billing": "Billing",
+        "Profile": "Profile",
+        "Settings": "Settings",
+        "Sign out": "Sign out"
+    },
+    "Landing": {
+        "title": "Courses",
+        "subtitle1": "This is the list of the courses you can enroll in.",
+        "subtitle2": "Courses when you need them and want them.",
+        "buttonLabel": "Search for Courses",
+        "feautredTitle": "Featured Courses",
+        "feauturedDescription": "From beginner to advanced, in all industries, we have the right courses just for you and preparing your entire journey for learning and making the most.",
+        "tags": [
+            "web development",
+            "enterprise IT",
+            "React Next.js",
+            "JavaScript",
+            "backend development"
+        ]
+    },
+    "Footer": {
+        "allRightsReserved": "All Rights Reserved.", 
+        "about": "About",
+        "privacyPolicy": "Privacy Policy",
+        "licensing": "Licensing",
+        "contact": "Contact"
+    },
+    "SearchPage": {
+        "title": "List of available courses",
+        "subtitle": "courses avaiable"
+    },
+    "TeacherCoursesPage": {
+        "title": "Courses",
+        "subtitle": "Browse your courses",
+        "create": "Create Course",
+        "confirm": "Are you sure you want to delete this course?",
+        "Unknown Teacher": "Unknown Teacher",
+        "CourseCard": {
+            "Published": "Published",
+            "Students Enrolled": "Students Enrolled",
+            "Edit": "Edit",
+            "Delete": "Delete",
+            "View Only": "View Only"
+        },
+        "CourseEditPage": {
+            "Back to Courses": "Back to Courses",
+            "Course Setup": "Course Setup",
+            "subtitle": "Complete all fields and save your course",
+            "Published": "Published",
+            "Draft": "Draft",
+            "Update Published Course": "Update Published Course",
+            "Save Draft": "Save Draft",
+            "Course Title": "Course Title",
+            "Write course title here": "Write course title here",
+            "Course Description": "Course Description",
+            "Write course description here": "Write course description here",
+            "Course Category": "Course Category",
+            "Select category here": "Select category here",
+            "Technology": "Technology",
+            "Science": "Science",
+            "Mathematics": "Mathematics",
+            "Artificial Intelligence": "Artificial Intelligence",
+            "Course Price": "Course Price",
+            "Sections": "Sections",
+            "Add Section": "Add Section",
+            "Loading course content": "Loading course content...",
+            "No sections available": "No sections available"
+        },
+        "Section": {
+            "success": "Section added/updated successfully but you need to save the course to apply the changes",
+            "Add/Edit Section": "Add/Edit Section",
+            "Section Title": "Section Title",
+            "Write section title here": "Write section title here",
+            "Section Description": "Section Description",
+            "Write section description here": "Write section description here",
+            "Cancel": "Cancel",
+            "Save": "Save"
+        },
+        "Chapter": {
+            "success": "Chapter added/updated successfully but you need to save the course to apply the changes",
+            "Add/Edit Chapter": "Add/Edit Chapter",
+            "Chapter Title": "Chapter Title",
+            "Write chapter title here": "Write chapter title here",
+            "Chapter Content": "Chapter Content",
+            "Write chapter content here": "Write chapter content here",
+            "Chapter Video": "Chapter Video",
+            "Current video:": "Current video:",
+            "Selected file:": "Selected file:",
+            "Cancel": "Cancel",
+            "Save": "Save",
+            "Add Chapter": "Add Chapter"
+        }
+    },
+    "TeacherSettingsPage": {
+        "title": "Teacher Settings",
+        "subtitle": "Manage your teacher notification settings"
+    },
+    "StudentCoursesPage": {
+        "title": "My Courses",
+        "subtitle": "View your enrolled courses",
+        "No courses": "You are not enrolled in any courses yet."
+    },
+    "StudentSettingsPage": {
+        "title": "User Settings",
+        "subtitle": "Manage your user notification settings"
+    },
+    "Settings": {
+        "Course Notifications": "Course Notifications",
+        "Email Alerts": "Email Alerts",
+        "SMS Alerts": "SMS Alerts",
+        "Notification Frequency": "Notification Frequency",
+        "Immediate": "Immediate",
+        "Daily": "Daily",
+        "Weekly": "Weekly",
+        "Update Settings": "Update Settings"
+    },
+    "Payment": {
+        "title": "Payment History",
+        "Payment Type": "Payment Type",
+        "All Types": "All Types", 
+        "Date": "Date",
+        "Amount": "Amount",
+        "Payment Method": "Payment Method",
+        "notfound": "No transactions to display",
+
+        "Guest Checkout": "Guest Checkout",
+        "subtitle": "Enter email to receive course access details and order confirmation. You can create an account after purchase.",
+        "Email address": "Email address",
+        "Continue as Guest": "Continue as Guest",
+        "Or": "Or",
+
+        "Checkout": "Checkout",
+        "subtitle2": "Fill out the payment details below to complete your purchase.",
+        "Credit/Debit Card": "Credit/Debit Card",
+        "Switch Account": "Switch Account",
+        "Pay with Credit Card": "Pay with Credit Card",
+
+        "CONGRATULATIONS": "CONGRATULATIONS",
+        "competionMessage": "You have made a course purchase successfully!",
+        "Help": " Need help? Contact our",
+        "customer support": "customer support",
+        "Go to Courses": "Go to Courses"
+
+
+    },
+    "ToolBar": {
+        "inputPlaceholder": "Search courses",
+        "categories": "Categories",
+        "allCategories": "All Categories",
+        "technology": "Technology",
+        "science": "Science",
+        "mathematics": "Mathematics",
+        "artificial-intelligence": "Artificial Intelligence"
+    },
+    "ProfilePage": {
+        "title": "Profile",
+        "subtitle": "View your profile"
+    },
+    "LoadingPage": {
+        "loading": "Loading..."
+    },
+    "Course": {
+        "Enrolled": "Enrolled",
+        "By": "By",
+        "Course Content": "Course Content",
+        "Enroll Now": "Enroll Now",
+        "Price Details": "Price Details",
+        "Total Amount": "Total Amount"
+    }
+}

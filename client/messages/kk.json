@@ -1,0 +1,184 @@
+{
+    "NonDashboardNavbar": {
+        "searchCourses": "Курстарды іздеу",
+        "search": "Іздеу",
+        "login": "Кіру",
+        "signUp": "Тіркелу",
+        "Dashboard": "Тақта"
+    },
+    "Navbar": {
+        "searchCourses": "Курстарды іздеу",
+        "search": "Іздеу",
+        "Home": "Басты бетке"
+    },
+    "Sidebar": {
+        "Courses": "Курстар",
+        "Billing": "Төлемдер",
+        "Profile": "Профиль",
+        "Settings": "Баптаулар",
+        "Sign out": "Шығу"
+    },
+    "Landing": {
+        "title": "Курстар",
+        "subtitle1": "Бұл сіз тіркеле алатын курстар тізімі.",
+        "subtitle2": "Қажетті уақытта және қалаған кезде курстар.",
+        "buttonLabel": "Курстарды іздеу",
+        "feautredTitle": "Танымал курстар",
+        "feauturedDescription": "Бастапқыдан кәсіби деңгейге дейін, барлық салалар бойынша бізде сізге арналған курстар бар және сіздің оқу сапарыңызды барынша тиімді етуге дайынбыз.",
+        "tags": [
+            "веб-әзірлеу",
+            "кәсіпорын IT",
+            "React Next.js",
+            "JavaScript",
+            "backend әзірлеу"
+        ]
+    },
+    "Footer": {
+        "allRightsReserved": "Барлық құқықтар қорғалған.",
+        "about": "Біз туралы",
+        "privacyPolicy": "Құпиялылық саясаты",
+        "licensing": "Лицензиялар",
+        "contact": "Байланыс"
+    },
+    "SearchPage": {
+        "title": "Қолжетімді курстар тізімі",
+        "subtitle": "курс қолжетімді"
+    },
+    "TeacherCoursesPage": {
+        "title": "Курстар",
+        "subtitle": "Өзіңіздің курстарыңызды қарап шығыңыз",
+        "create": "Курс жасау",
+        "confirm": "Бұл курсты жойғыңыз келетініне сенімдісіз бе?",
+        "Unknown Teacher": "Белгісіз оқытушы",
+        "CourseCard": {
+            "Published": "Жарияланды",
+            "Students Enrolled": "тіркелген студент",
+            "Edit": "Өңдеу",
+            "Delete": "Жою",
+            "View Only": "Тек қарау"
+        },
+        "CourseEditPage": {
+            "Back to Courses": "Курстарға қайту",
+            "Course Setup": "Курс баптауы",
+            "subtitle": "Барлық өрістерді толтырып, курсты сақтаңыз",
+            "Published": "Жарияланды",
+            "Draft": "Қаралым",
+            "Update Published Course": "Жарияланған курсты жаңарту",
+            "Save Draft": "Қаралымды сақтау",
+            "Course Title": "Курс атауы",
+            "Write course title here": "Мұнда курс атауын жазыңыз",
+            "Course Description": "Курс сипаттамасы",
+            "Write course description here": "Мұнда курс сипаттамасын жазыңыз",
+            "Course Category": "Курс санаты",
+            "Select category here": "Мұнда санатты таңдаңыз",
+            "Technology": "Технологиялар",
+            "Science": "Ғылым",
+            "Mathematics": "Математика",
+            "Artificial Intelligence": "Жасанды интеллект",
+            "Course Price": "Курс бағасы",
+            "Sections": "Бөлімдер",
+            "Add Section": "Бөлім қосу",
+            "Loading course content": "Курс мазмұны жүктелуде...",
+            "No sections available": "Бөлімдер жоқ"
+        },
+        "Section": {
+            "success": "Бөлім сәтті қосылды/жаңартылды, бірақ өзгерістерді қолдану үшін курсты сақтау қажет",
+            "Add/Edit Section": "Бөлімді қосу/өңдеу",
+            "Section Title": "Бөлім атауы",
+            "Write section title here": "Мұнда бөлім атауын жазыңыз",
+            "Section Description": "Бөлім сипаттамасы",
+            "Write section description here": "Мұнда бөлім сипаттамасын жазыңыз",
+            "Cancel": "Бас тарту",
+            "Save": "Сақтау"
+        },
+        "Chapter": {
+            "success": "Тарау сәтті қосылды/жаңартылды, бірақ өзгерістерді қолдану үшін курсты сақтау қажет",
+            "Add/Edit Chapter": "Тарауды қосу/өңдеу",
+            "Chapter Title": "Тарау атауы",
+            "Write chapter title here": "Мұнда тарау атауын жазыңыз",
+            "Chapter Content": "Тарау мазмұны",
+            "Write chapter content here": "Мұнда тарау мазмұнын жазыңыз",
+            "Chapter Video": "Тарау видеосы",
+            "Current video:": "Қазіргі видео:",
+            "Selected file:": "Таңдалған файл:",
+            "Cancel": "Бас тарту",
+            "Save": "Сақтау",
+            "Add Chapter": "Тарау қосу"
+        }
+    },
+    "TeacherSettingsPage": {
+        "title": "Мұғалім параметрлері",
+        "subtitle": "Мұғалімнің хабарландыру параметрлерін басқару"
+    },
+    "StudentCoursesPage": {
+        "title": "Менің курстарым",
+        "subtitle": "Қатысып жатқан курстарыңызды қараңыз",
+        "No courses": "You are not enrolled in any courses yet."
+    },
+    "StudentSettingsPage": {
+        "title": "Пайдаланушы параметрлері",
+        "subtitle": "Пайдаланушының хабарландыру параметрлерін басқару"
+    },
+    "Settings": {
+        "Course Notifications": "Курс хабарландырулары",
+        "Email Alerts": "Email хабарландырулары",
+        "SMS Alerts": "SMS хабарландырулары",
+        "Notification Frequency": "Хабарландыру жиілігі",
+        "Immediate": "Лезде",
+        "Daily": "Күн сайын",
+        "Weekly": "Апта сайын",
+        "Update Settings": "Баптауларды жаңарту"
+    },
+    "Payment": {
+        "title": "Төлем тарихы",
+        "Payment Type": "Төлем түрі",
+        "All Types": "Барлық түрлері",
+        "Date": "Күні",
+        "Amount": "Сомасы",
+        "Payment Method": "Төлем әдісі",
+        "notfound": "Көрсетілетін транзакциялар жоқ",
+
+        "Guest Checkout": "Қонақ ретінде төлеу",
+        "subtitle": "Курсқа кіру мәліметтері мен тапсырыс растауын алу үшін email енгізіңіз. Сатып алғаннан кейін аккаунт құра аласыз.",
+        "Email address": "Email мекенжайы",
+        "Continue as Guest": "Қонақ ретінде жалғастыру",
+        "Or": "Немесе",
+
+        "Checkout": "Төлем жасау",
+        "subtitle2": "Сатып алуды аяқтау үшін төмендегі төлем мәліметтерін толтырыңыз.",
+        "Credit/Debit Card": "Кредиттік/Дебеттік карта",
+        "Switch Account": "Аккаунтты ауыстыру",
+        "Pay with Credit Card": "Картамен төлеу", 
+
+        "CONGRATULATIONS": "ҚҰТТЫҚТАЙМЫЗ",
+        "competionMessage": "Сіз курсты сәтті сатып алдыңыз!",
+        "Help": "Көмек керек пе? Байланысыңыз",
+        "customer support": "қолдау қызметі",
+        "Go to Courses": "Курстарға өту"
+
+    },
+    "ToolBar": {
+        "inputPlaceholder": "Курстарды іздеу",
+        "categories": "Санаттар",
+        "allCategories": "Барлық санаттар",
+        "technology": "Технологиялар",
+        "science": "Ғылым",
+        "mathematics": "Математика",
+        "artificial-intelligence": "Жасанды интеллект"
+    },
+    "ProfilePage": {
+        "title": "Профиль",
+        "subtitle": "Профиліңізді қараңыз"
+    },
+    "LoadingPage": {
+        "loading": "Сәл күте тұрыңыз..."
+    },
+    "Course": {
+        "Enrolled": "Тіркелген",
+        "By": "Авторы",
+        "Course Content": "Курс мазмұны",
+        "Enroll Now": "Тіркелу",
+        "Price Details": "Баға туралы мәлімет",
+        "Total Amount": "Жалпы сома"
+    }
+}

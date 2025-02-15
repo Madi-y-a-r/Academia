@@ -1,0 +1,183 @@
+{
+    "NonDashboardNavbar": {
+        "searchCourses": "Поиск курсов",
+        "search": "Поиск",
+        "login": "Войти",
+        "signUp": "Регистрация",
+        "Dashboard": "Панель"
+    },
+    "Navbar": {
+        "searchCourses": "Поиск курсов",
+        "search": "Поиск",
+        "Home": "Главная страница"
+    },
+    "Sidebar": {
+        "Courses": "Курсы",
+        "Billing": "Оплата",
+        "Profile": "Профиль",
+        "Settings": "Настройки",
+        "Sign out": "Выйти"
+    },
+    "Landing": {
+        "title": "Курсы",
+        "subtitle1": "Это список курсов, на которые вы можете записаться.",
+        "subtitle2": "Курсы, когда они вам нужны и когда вы их хотите.",
+        "buttonLabel": "Найти курсы",
+        "feautredTitle": "Популярные курсы",
+        "feauturedDescription": "От начального до продвинутого уровня, во всех отраслях — у нас есть подходящие курсы именно для вас, чтобы подготовить ваш учебный путь и сделать его максимально эффективным.",
+        "tags": [
+            "веб-разработка",
+            "корпоративный IT",
+            "React Next.js",
+            "JavaScript",
+            "backend-разработка"
+        ]
+    },
+    "Footer": {
+        "allRightsReserved": "Все права защищены.",
+        "about": "О нас",
+        "privacyPolicy": "Политика конфиденциальности",
+        "licensing": "Лицензии",
+        "contact": "Контакты"
+    },
+    "SearchPage": {
+        "title": "Список доступных курсов",
+        "subtitle": "курсов доступно"
+    },
+    "TeacherCoursesPage": {
+        "title": "Курсы",
+        "subtitle": "Просмотрите ваши курсы",
+        "create": "Создать курс",
+        "confirm": "Вы уверены, что хотите удалить этот курс?",
+        "Unknown Teacher": "Неизвестный преподаватель",
+        "CourseCard": {
+            "Published": "Опубликовано",
+            "Students Enrolled": "Записанных студентов",
+            "Edit": "Редактировать",
+            "Delete": "Удалить",
+            "View Only": "Только просмотр"
+        },
+        "CourseEditPage": {
+            "Back to Courses": "Назад к курсам",
+            "Course Setup": "Настройка курса",
+            "subtitle": "Заполните все поля и сохраните курс",
+            "Published": "Опубликовано",
+            "Draft": "Черновик",
+            "Update Published Course": "Обновить опубликованный курс",
+            "Save Draft": "Сохранить черновик",
+            "Course Title": "Название курса",
+            "Write course title here": "Введите название курса здесь",
+            "Course Description": "Описание курса",
+            "Write course description here": "Введите описание курса здесь",
+            "Course Category": "Категория курса",
+            "Select category here": "Выберите категорию здесь",
+            "Technology": "Технологии",
+            "Science": "Наука",
+            "Mathematics": "Математика",
+            "Artificial Intelligence": "Искусственный интеллект",
+            "Course Price": "Цена курса",
+            "Sections": "Разделы",
+            "Add Section": "Добавить раздел",
+            "Loading course content": "Загрузка содержимого курса...",
+            "No sections available": "Разделы отсутствуют"
+        },
+        "Section": {
+            "success": "Раздел успешно добавлен/обновлен, но необходимо сохранить курс для применения изменений",
+            "Add/Edit Section": "Добавить/Редактировать раздел",
+            "Section Title": "Название раздела",
+            "Write section title here": "Введите название раздела здесь",
+            "Section Description": "Описание раздела",
+            "Write section description here": "Введите описание раздела здесь",
+            "Cancel": "Отмена",
+            "Save": "Сохранить"
+        },
+        "Chapter": {
+            "success": "Глава успешно добавлена/обновлена, но необходимо сохранить курс для применения изменений",
+            "Add/Edit Chapter": "Добавить/Редактировать главу",
+            "Chapter Title": "Название главы",
+            "Write chapter title here": "Введите название главы здесь",
+            "Chapter Content": "Содержание главы",
+            "Write chapter content here": "Введите содержание главы здесь",
+            "Chapter Video": "Видео главы",
+            "Current video:": "Текущее видео:",
+            "Selected file:": "Выбранный файл:",
+            "Cancel": "Отмена",
+            "Save": "Сохранить",
+            "Add Chapter": "Добавить главу"
+        }
+    },
+    "TeacherSettingsPage": {
+        "title": "Настройки преподавателя",
+        "subtitle": "Управляйте настройками уведомлений для преподавателей"
+    },
+    "StudentCoursesPage": {
+        "title": "Мои курсы",
+        "subtitle": "Просмотр записанных курсов",
+        "No courses": "Вы еще не записались на курсы"
+    },
+    "StudentSettingsPage": {
+        "title": "Настройки пользователя",
+        "subtitle": "Управляйте настройками уведомлений для пользователей"
+    },
+    "Settings": {
+        "Course Notifications": "Уведомления о курсах",
+        "Email Alerts": "Уведомления по email",
+        "SMS Alerts": "Уведомления по SMS",
+        "Notification Frequency": "Частота уведомлений",
+        "Immediate": "Немедленно",
+        "Daily": "Ежедневно",
+        "Weekly": "Еженедельно",
+        "Update Settings": "Обновить настройки"
+    },
+    "Payment": {
+        "title": "История платежей",
+        "Payment Type": "Тип платежа",
+        "All Types": "Все типы",
+        "Date": "Дата",
+        "Amount": "Сумма",
+        "Payment Method": "Способ оплаты",
+        "notfound": "Нет транзакций для отображения",
+
+        "Guest Checkout": "Гостевая оплата",
+        "subtitle": "Введите email, чтобы получить данные доступа к курсу и подтверждение заказа. Вы сможете создать аккаунт после покупки.",
+        "Email address": "Адрес электронной почты",
+        "Continue as Guest": "Продолжить как гость",
+        "Or": "Или",
+
+        "Checkout": "Оформление заказа",
+        "subtitle2": "Заполните платежные данные ниже, чтобы завершить покупку.",
+        "Credit/Debit Card": "Кредитная/Дебетовая карта",
+        "Switch Account": "Сменить аккаунт",
+        "Pay with Credit Card": "Оплатить картой", 
+
+        "CONGRATULATIONS": "ПОЗДРАВЛЯЕМ",
+        "competionMessage": "Вы успешно приобрели курс!",
+        "Help": "Нужна помощь? Свяжитесь с",
+        "customer support": "службой поддержки",
+        "Go to Courses": "Перейти к курсам"
+    },
+    "ToolBar": {
+        "inputPlaceholder": "Поиск курсов",
+        "categories": "Категории",
+        "allCategories": "Все категории",
+        "technology": "Технологии",
+        "science": "Наука",
+        "mathematics": "Математика",
+        "artificial-intelligence": "Искусственный интеллект"
+    },
+    "ProfilePage": {
+        "title": "Профиль",
+        "subtitle": "Просмотр профиля"
+    },
+    "LoadingPage": {
+        "loading": "Загрузка..."
+    },
+    "Course": {
+        "Enrolled": "Записаны",
+        "By": "От",
+        "Course Content": "Содержание курса",
+        "Enroll Now": "Записаться",
+        "Price Details": "Детали стоимости",
+        "Total Amount": "Итоговая сумма"
+    }
+}

@@ -24,19 +24,21 @@ import Loading from "./Loading";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
 
 const AppSidebar = () => {
+  const t = useTranslations("Sidebar")
   const { user, isLoaded } = useUser();
   const { signOut } = useClerk();
   const pathname = usePathname();
   const { toggleSidebar } = useSidebar();
-
+  const locale = useLocale();
   const navLinks = {
     student: [
-      { icon: BookOpen, label: "Courses", href: "/user/courses" },
-      { icon: Briefcase, label: "Billing", href: "/user/billing" },
-      { icon: User, label: "Profile", href: "/user/profile" },
-      { icon: Settings, label: "Settings", href: "/user/settings" },
+      { icon: BookOpen, label: "Courses", href: "/student/courses" },
+      { icon: Briefcase, label: "Billing", href: "/student/billing" },
+      { icon: User, label: "Profile", href: "/student/profile" },
+      { icon: Settings, label: "Settings", href: "/student/settings" },
     ],
     teacher: [
       { icon: BookOpen, label: "Courses", href: "/teacher/courses" },
@@ -52,7 +54,6 @@ const AppSidebar = () => {
   const userType =
     (user.publicMetadata.userType as "student" | "teacher") || "student";
   const currentNavLinks = navLinks[userType];
-
   return (
     <Sidebar
       collapsible="icon"
@@ -87,7 +88,7 @@ const AppSidebar = () => {
       <SidebarContent>
         <SidebarMenu className="app-sidebar__nav-menu">
           {currentNavLinks.map((link) => {
-            const isActive = pathname.startsWith(link.href);
+            const isActive = pathname === `/${locale}${link.href}`;
             return (
               <SidebarMenuItem
                 key={link.href}
@@ -118,7 +119,7 @@ const AppSidebar = () => {
                         isActive ? "text-white-50" : "text-gray-500"
                       )}
                     >
-                      {link.label}
+                      {t(link.label)}
                     </span>
                   </Link>
                 </SidebarMenuButton>
@@ -137,7 +138,7 @@ const AppSidebar = () => {
                 className="app-sidebar__signout"
               >
                 <LogOut className="mr-2 h-6 w-6" />
-                <span>Sign out</span>
+                <span>{t("Sign out")}</span>
               </button>
             </SidebarMenuButton>
           </SidebarMenuItem>
