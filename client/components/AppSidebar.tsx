@@ -27,6 +27,7 @@ import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 
 const AppSidebar = () => {
+  const t = useTranslations("Sidebar")
   const { user, isLoaded } = useUser();
   const { signOut } = useClerk();
   const pathname = usePathname();
@@ -53,7 +54,6 @@ const AppSidebar = () => {
   const userType =
     (user.publicMetadata.userType as "student" | "teacher") || "student";
   const currentNavLinks = navLinks[userType];
-  const t = useTranslations("Sidebar")
   return (
     <Sidebar
       collapsible="icon"

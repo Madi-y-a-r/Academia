@@ -13,10 +13,10 @@ import { useTranslations } from "next-intl";
 const Search = () => {
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
+  const t = useTranslations("SearchPage")
   const { data: courses, isLoading, isError } = useGetCoursesQuery({});
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const router = useRouter();
-  const t = useTranslations("SearchPage")
 
   useEffect(() => {
     if (courses) {

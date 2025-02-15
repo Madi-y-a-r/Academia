@@ -824,7 +824,6 @@ export const kk: LocalizationResource = {
         },
       },
       passkeysSection: {
-        primaryButton: 'Passkey қосу',
         menuAction__destructive: 'Жою',
         menuAction__rename: 'Атауын өзгерту',
         title: 'Passkey-лер',

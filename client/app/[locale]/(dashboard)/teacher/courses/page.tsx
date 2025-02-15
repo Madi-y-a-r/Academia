@@ -18,6 +18,7 @@ import React, { useMemo, useState } from "react";
 const Courses = () => {
   const router = useRouter();
   const { user } = useUser();
+  const t = useTranslations("TeacherCoursesPage")
   const {
     data: courses,
     isLoading,
@@ -30,7 +31,6 @@ const Courses = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
 
-  const t = useTranslations("TeacherCoursesPage")
   const filteredCourses = useMemo(() => {
     if (!courses) return [];
 
