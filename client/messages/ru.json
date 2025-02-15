@@ -148,7 +148,13 @@
         "subtitle2": "Заполните платежные данные ниже, чтобы завершить покупку.",
         "Credit/Debit Card": "Кредитная/Дебетовая карта",
         "Switch Account": "Сменить аккаунт",
-        "Pay with Credit Card": "Оплатить картой"
+        "Pay with Credit Card": "Оплатить картой", 
+
+        "CONGRATULATIONS": "ПОЗДРАВЛЯЕМ",
+        "competionMessage": "Вы успешно приобрели курс!",
+        "Help": "Нужна помощь? Свяжитесь с",
+        "customer support": "службой поддержки",
+        "Go to Courses": "Перейти к курсам"
     },
     "ToolBar": {
         "inputPlaceholder": "Поиск курсов",

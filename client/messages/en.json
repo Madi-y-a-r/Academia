@@ -117,7 +117,7 @@
     },
     "StudentSettingsPage": {
         "title": "User Settings",
-        "sudtitle": "Manage your user notification settings"
+        "subtitle": "Manage your user notification settings"
     },
     "Settings": {
         "Course Notifications": "Course Notifications",
@@ -148,7 +148,13 @@
         "subtitle2": "Fill out the payment details below to complete your purchase.",
         "Credit/Debit Card": "Credit/Debit Card",
         "Switch Account": "Switch Account",
-        "Pay with Credit Card": "Pay with Credit Card"
+        "Pay with Credit Card": "Pay with Credit Card",
+
+        "CONGRATULATIONS": "CONGRATULATIONS",
+        "competionMessage": "You have made a course purchase successfully!",
+        "Help": " Need help? Contact our",
+        "customer support": "customer support",
+        "Go to Courses": "Go to Courses"
 
 
     },

@@ -148,7 +148,13 @@
         "subtitle2": "Сатып алуды аяқтау үшін төмендегі төлем мәліметтерін толтырыңыз.",
         "Credit/Debit Card": "Кредиттік/Дебеттік карта",
         "Switch Account": "Аккаунтты ауыстыру",
-        "Pay with Credit Card": "Картамен төлеу"
+        "Pay with Credit Card": "Картамен төлеу", 
+
+        "CONGRATULATIONS": "ҚҰТТЫҚТАЙМЫЗ",
+        "competionMessage": "Сіз курсты сәтті сатып алдыңыз!",
+        "Help": "Көмек керек пе? Байланысыңыз",
+        "customer support": "қолдау қызметі",
+        "Go to Courses": "Курстарға өту"
 
     },
     "ToolBar": {
