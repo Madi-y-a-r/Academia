@@ -104,7 +104,17 @@ const courseSchema = new Schema(
     status: {
       type: String,
       required: true,
-      enum: ["Draft", "Published"],
+      enum: ["Draft","Pending", "Published", "Rejected"],
+      default: "Draft",
+      index: {
+        name: "statusIndex",
+        type: "global",
+        project: true, // проекция всех атрибутов
+        throughput: { read: 5, write: 5 }
+      }
+    },
+    adminComment: {
+      type: String,
     },
     sections: {
       type: Array,

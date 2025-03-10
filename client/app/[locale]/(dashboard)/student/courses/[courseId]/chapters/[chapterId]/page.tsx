@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
@@ -21,7 +21,7 @@ const Course = () => {
     hasMarkedComplete,
     setHasMarkedComplete,
   } = useCourseProgressData();
-  console.log("currentChapter.video:", currentChapter);
+  const [activeTab, setActiveTab] = useState("Notes"); 
 
   const playerRef = useRef<ReactPlayer>(null);
 
@@ -42,7 +42,6 @@ const Course = () => {
       );
     }
   };
-
   if (isLoading) return <Loading />;
   if (!user) return <div>Please sign in to view this course.</div>;
   if (!course || !userProgress) return <div>Error loading course</div>;
@@ -100,7 +99,12 @@ const Course = () => {
         </Card>
 
         <div className="course__content">
-          <Tabs defaultValue="Notes" className="course__tabs">
+          <Tabs 
+            onValueChange={setActiveTab}
+            value={activeTab} 
+            defaultValue="Notes" 
+            className="course__tabs"
+          >
             <TabsList className="course__tabs-list">
               <TabsTrigger className="course__tab" value="Notes">
                 Notes
@@ -130,7 +134,7 @@ const Course = () => {
                   <CardTitle>Resources Content</CardTitle>
                 </CardHeader>
                 <CardContent className="course__tab-body">
-                  {/* Add resources content here */}
+                  {currentChapter?.title}
                 </CardContent>
               </Card>
             </TabsContent>

@@ -15,7 +15,7 @@ const Footer = () => {
 
   return (
     <div className="footer">
-      <p>&copy; 2025 AYANA. {t("allRightsReserved")}</p>
+      <p>&copy; 2025 STUDYT. {t("allRightsReserved")}</p>
       <div className="footer__links">
       {footerLinks.map((item) => (
           <Link

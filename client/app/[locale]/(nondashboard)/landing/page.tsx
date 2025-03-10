@@ -1,12 +1,12 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { useCarousel } from "@/hooks/useCarousel";
 import { Skeleton } from "@/components/ui/skeleton";
-import { useGetCoursesQuery } from "@/state/api";
+import { useGetCoursesQuery, useGetPublishedCoursesQuery } from "@/state/api";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import CourseCardSearch from "@/components/CourseCardSearch";
@@ -48,12 +48,25 @@ const Landing = () => {
   const router = useRouter();
   const t = useTranslations("Landing");
   const currentImage = useCarousel({ totalImages: 3 });
-  const { data: courses, isLoading, isError } = useGetCoursesQuery({});
+  const { data: courses, isLoading, isError } = useGetPublishedCoursesQuery({});
 
   const handleCourseClick = (courseId: string) => {
     router.push(`/search?id=${courseId}`, {
       scroll: false,
     });
+  };
+  const text = t("welcome");
+  const waveVariants: Variants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: (i: number) => ({
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: i * 0.1,
+        type: "spring",
+        stiffness: 100,
+      },
+    }),
   };
 
   if (isLoading) return <LoadingSkeleton />;
@@ -65,6 +78,19 @@ const Landing = () => {
       transition={{ duration: 0.5 }}
       className="landing"
     >
+      <h1 className="text-center text-6xl font-extrabold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text mt-6 mb-4">
+        {text.split("").map((char, index) => (
+          <motion.span
+            key={index}
+            variants={waveVariants}
+            initial="hidden"
+            animate="visible"
+            custom={index}
+          >
+            {char}
+          </motion.span>
+        ))}
+      </h1>
       <motion.div
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}

@@ -46,6 +46,11 @@ const AppSidebar = () => {
       { icon: User, label: "Profile", href: "/teacher/profile" },
       { icon: Settings, label: "Settings", href: "/teacher/settings" },
     ],
+    admin: [
+      { icon: BookOpen, label: "Courses", href: "/admin/courses" },
+      { icon: User, label: "Profile", href: "/admin/profile" },
+      { icon: Settings, label: "Settings", href: "/admin/settings" },
+    ],
   };
 
   if (!isLoaded) return <Loading />;
@@ -77,7 +82,7 @@ const AppSidebar = () => {
                     height={20}
                     className="app-sidebar__logo"
                   />
-                  <p className="app-sidebar__title">AYANA</p>
+                  <p className="app-sidebar__title">STUDYT</p>
                 </div>
                 <PanelLeft className="app-sidebar__collapse-icon" />
               </div>
