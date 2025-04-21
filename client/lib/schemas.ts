@@ -46,3 +46,25 @@ export const notificationSettingsSchema = z.object({
 export type NotificationSettingsFormData = z.infer<
   typeof notificationSettingsSchema
 >;
+
+export const quizSchema = z.object({
+  title: z.string().min(1, { message: "Quiz title is required" }),
+  description: z.string().optional(),
+  questions: z.array(
+    z.object({
+      questionId: z.string(),
+      questionText: z.string().min(1, { message: "Question text is required" }),
+      options: z.array(
+        z.object({
+          optionId: z.string(),
+          text: z.string().min(1, { message: "Option text is required" }),
+          isCorrect: z.boolean(),
+        })
+      ).min(2, { message: "At least two options are required" }),
+      explanation: z.string().optional(),
+    })
+  ).min(1, { message: "At least one question is required" }),
+  passingScore: z.number().min(0).max(100),
+});
+
+export type QuizFormData = z.infer<typeof quizSchema>;

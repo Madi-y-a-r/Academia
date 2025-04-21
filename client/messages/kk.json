@@ -105,6 +105,28 @@
             "Cancel": "Бас тарту",
             "Save": "Сақтау",
             "Add Chapter": "Тарау қосу"
+        },
+        "Quiz": {
+            "Add/Edit Quiz": "Тест қосу/Өзгерту",
+            "Quiz Title": "Тест атауы",
+            "Write quiz title here": "Тест атауын енгізіңіз",
+            "Quiz Description": "Тест сипаттамасы",
+            "Write quiz description here": "Тест сипаттамасын енгізіңіз",
+            "Passing Score (%)": "Өту баллы (%)",
+            "Questions": "Сұрақтар",
+            "Add Question": "Сұрақ қосу",
+            "Question": "Сұрақ",
+            "Question Text": "Сұрақ мәтіні",
+            "Enter your question here": "Сұрағыңызды енгізіңіз",
+            "Answer Options": "Жауап нұсқалары",
+            "Add Option": "Нұсқа қосу",
+            "Correct": "Дұрыс",
+            "Option text": "Нұсқа мәтіні",
+            "Explanation (Optional)": "Түсініктеме (міндетті емес)",
+            "Explain the correct answer": "Дұрыс жауапты түсіндіріңіз",
+            "Cancel": "Болдырмау",
+            "Save": "Сақтау",
+            "success": "Тест сәтті сақталды!"
         }
     },
     "TeacherSettingsPage": {

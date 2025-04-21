@@ -79,12 +79,12 @@ const NonDashboardNavbar = () => {
           </div>
         </div>
         <div className="nondashboard-navbar__actions">
+        <LanguageSwitcher />
         <SignedIn>
           <Button onClick={handleGoDashboard} size="lg" className="font-bold bg-primary-700 hover:bg-primary-800 px-4 py-2 rounded-md;">
               <p>{t("Dashboard")}</p>
               <LayoutDashboardIcon />
           </Button>
-          <LanguageSwitcher />
         </SignedIn>
           <button className="nondashboard-navbar__notification-button">
             <span className="nondashboard-navbar__notification-indicator"></span>

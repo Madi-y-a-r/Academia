@@ -24,7 +24,7 @@ const LanguageSwitcher = () => {
     <select
       value={locale}
       onChange={changeLanguage}
-      className="px-2 py-3 rounded-xl bg-customgreys-primarybg text-customgreys-dirtyGrey hover:text-white-50 hover:bg-customgreys-darkerGrey transition-all duration-300 text-sm sm:text-base "
+      className="px-2 py-3 rounded-xl bg-customgreys-primarybg text-customgreys-dirtyGrey hover:text-white-50  transition-all duration-300 text-sm sm:text-base "
     >
       <option value="en">English</option>
       <option value="ru">Русский</option>

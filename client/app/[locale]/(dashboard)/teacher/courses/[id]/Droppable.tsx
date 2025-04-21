@@ -2,19 +2,22 @@
 
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import { Button } from "@/components/ui/button";
-import { Trash2, Edit, Plus, GripVertical } from "lucide-react";
+import { Trash2, Edit, Plus, GripVertical, HelpCircle } from "lucide-react";
 import { useAppDispatch, useAppSelector } from "@/state/redux";
 import {
   setSections,
   deleteSection,
   deleteChapter,
+  deleteQuiz,
   openSectionModal,
   openChapterModal,
+  openQuizModal,
 } from "@/state";
 import { useTranslations } from "next-intl";
 
 export default function DroppableComponent() {
-  const t = useTranslations("TeacherCoursesPage.Chapter")
+  const t = useTranslations("TeacherCoursesPage.Chapter");
+  const tQuiz = useTranslations("TeacherCoursesPage.Quiz");
   const dispatch = useAppDispatch();
   const { sections } = useAppSelector((state) => state.global.courseEditor);
 
@@ -45,6 +48,7 @@ export default function DroppableComponent() {
   };
 
   return (
+    <>
     <DragDropContext onDragEnd={handleSectionDragEnd}>
       <Droppable droppableId="sections">
         {(provided) => (
@@ -134,6 +138,7 @@ export default function DroppableComponent() {
         )}
       </Droppable>
     </DragDropContext>
+    </>
   );
 }
 
@@ -199,56 +204,132 @@ const ChapterItem = ({
   draggableProvider: any;
 }) => {
   const dispatch = useAppDispatch();
+  const tQuiz = useTranslations("TeacherCoursesPage.Quiz");
 
   return (
     <div
       ref={draggableProvider.innerRef}
       {...draggableProvider.draggableProps}
       {...draggableProvider.dragHandleProps}
-      className={`droppable-chapter ${
-        chapterIndex % 2 === 1
-          ? "droppable-chapter--odd"
-          : "droppable-chapter--even"
-      }`}
+      className="droppable-chapter-container"
     >
-      <div className="droppable-chapter__title">
-        <GripVertical className="h-4 w-4 mb-[2px]" />
-        <p className="text-sm">{`${chapterIndex + 1}. ${chapter.title}`}</p>
+      <div
+        className={`droppable-chapter ${
+          chapterIndex % 2 === 1
+            ? "droppable-chapter--odd"
+            : "droppable-chapter--even"
+        }`}
+      >
+        <div className="droppable-chapter__title">
+          <GripVertical className="h-4 w-4 mb-[2px]" />
+          <p className="text-sm">{`${chapterIndex + 1}. ${chapter.title}`}</p>
+        </div>
+        <div className="droppable-chapter__actions">
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            className="droppable-chapter__button"
+            onClick={() =>
+              dispatch(
+                openQuizModal({
+                  sectionIndex,
+                  chapterIndex,
+                  quizIndex: null,
+                })
+              )
+            }
+            title="Add Quiz"
+          >
+            <HelpCircle className="h-4 w-4" />
+          </Button>
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            className="droppable-chapter__button"
+            onClick={() =>
+              dispatch(
+                openChapterModal({
+                  sectionIndex,
+                  chapterIndex,
+                })
+              )
+            }
+          >
+            <Edit className="h-4 w-4" />
+          </Button>
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            className="droppable-chapter__button"
+            onClick={() =>
+              dispatch(
+                deleteChapter({
+                  sectionIndex,
+                  chapterIndex,
+                })
+              )
+            }
+          >
+            <Trash2 className="h-4 w-4" />
+          </Button>
+        </div>
       </div>
-      <div className="droppable-chapter__actions">
-        <Button
-          type="button"
-          variant="ghost"
-          size="sm"
-          className="droppable-chapter__button"
-          onClick={() =>
-            dispatch(
-              openChapterModal({
-                sectionIndex,
-                chapterIndex,
-              })
-            )
-          }
-        >
-          <Edit className="h-4 w-4" />
-        </Button>
-        <Button
-          type="button"
-          variant="ghost"
-          size="sm"
-          className="droppable-chapter__button"
-          onClick={() =>
-            dispatch(
-              deleteChapter({
-                sectionIndex,
-                chapterIndex,
-              })
-            )
-          }
-        >
-          <Trash2 className="h-4 w-4" />
-        </Button>
-      </div>
+      
+      {/* Display quizzes for this chapter */}
+      {chapter.quizzes && chapter.quizzes.length > 0 && (
+        <div className="chapter-quizzes pl-8">
+          {chapter.quizzes.map((quiz, quizIndex) => (
+            <div
+              key={quiz.quizId}
+              className="chapter-quiz p-2 ml-4 mt-1 mb-1 bg-customgreys-darkGrey bg-opacity-50 rounded flex justify-between items-center"
+            >
+              <div className="flex items-center">
+                <HelpCircle className="h-3 w-3 mr-2 text-primary-600" />
+                <p className="text-xs">{quiz.title}</p>
+              </div>
+              <div className="chapter-quiz__actions">
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="sm"
+                  className="p-0"
+                  onClick={() =>
+                    dispatch(
+                      openQuizModal({
+                        sectionIndex,
+                        chapterIndex,
+                        quizIndex,
+                      })
+                    )
+                  }
+                >
+                  <Edit className="h-3 w-3" />
+                </Button>
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="sm"
+                  className="p-0"
+                  onClick={() =>
+                    dispatch(
+                      deleteQuiz({
+                        sectionIndex,
+                        chapterIndex,
+                        quizIndex,
+                      })
+                    )
+                  }
+                >
+                  <Trash2 className="h-3 w-3" />
+                </Button>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

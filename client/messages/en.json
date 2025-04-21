@@ -105,6 +105,28 @@
             "Cancel": "Cancel",
             "Save": "Save",
             "Add Chapter": "Add Chapter"
+        },
+        "Quiz": {
+            "Add/Edit Quiz": "Add/Edit Quiz",
+            "Quiz Title": "Quiz Title",
+            "Write quiz title here": "Write quiz title here",
+            "Quiz Description": "Quiz Description",
+            "Write quiz description here": "Write quiz description here",
+            "Passing Score (%)": "Passing Score (%)",
+            "Questions": "Questions",
+            "Add Question": "Add Question",
+            "Question": "Question",
+            "Question Text": "Question Text",
+            "Enter your question here": "Enter your question here",
+            "Answer Options": "Answer Options",
+            "Add Option": "Add Option",
+            "Correct": "Correct",
+            "Option text": "Option text",
+            "Explanation (Optional)": "Explanation (Optional)",
+            "Explain the correct answer": "Explain the correct answer",
+            "Cancel": "Cancel",
+            "Save": "Save",
+            "success": "Quiz saved successfully!"
         }
     },
     "TeacherSettingsPage": {

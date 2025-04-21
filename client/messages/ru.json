@@ -105,6 +105,28 @@
             "Cancel": "Отмена",
             "Save": "Сохранить",
             "Add Chapter": "Добавить главу"
+        },
+        "Quiz": {
+            "Add/Edit Quiz": "Добавить/Редактировать тест",
+            "Quiz Title": "Название теста",
+            "Write quiz title here": "Введите название теста",
+            "Quiz Description": "Описание теста",
+            "Write quiz description here": "Введите описание теста",
+            "Passing Score (%)": "Проходной балл (%)",
+            "Questions": "Вопросы",
+            "Add Question": "Добавить вопрос",
+            "Question": "Вопрос",
+            "Question Text": "Текст вопроса",
+            "Enter your question here": "Введите ваш вопрос",
+            "Answer Options": "Варианты ответов",
+            "Add Option": "Добавить вариант",
+            "Correct": "Правильный",
+            "Option text": "Текст варианта",
+            "Explanation (Optional)": "Пояснение (необязательно)",
+            "Explain the correct answer": "Объясните правильный ответ",
+            "Cancel": "Отмена",
+            "Save": "Сохранить",
+            "success": "Тест успешно сохранен!"
         }
     },
     "TeacherSettingsPage": {
