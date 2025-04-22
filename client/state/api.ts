@@ -92,7 +92,10 @@ export const api = createApi({
     getPublishedCourses: build.query<Course[], { category?: string }>({
       query: ({ category }) => ({
         url: "courses",
-        params: { category, status: "Published"},
+        params: { 
+          category,
+          status: "Published"
+        },
       }),
       providesTags: ["Courses"],
     }),

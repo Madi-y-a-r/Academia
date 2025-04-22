@@ -24,6 +24,25 @@ body,
 :root {
   --radius: 8px;
 }
+/* Webkit-браузеры (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 8px; /* Ширина скроллбара */
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a; /* Цвет фона */
+  border-radius: 10px; /* Скругление */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* Цвет полоски прокрутки */
+  border-radius: 10px; /* Скругление */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Цвет при наведении */
+}
+
 
 input[type="color"] {
   appearance: none;
@@ -66,6 +85,19 @@ input[type="color"] {
     --card: theme("colors.customgreys.primarybg");
     --card-foreground: theme("colors.white.50");
   }
+  .light {
+    --background: theme("colors.white.50");
+    --foreground: theme("colors.black");
+    --sidebar-background: theme("colors.gray.100");
+    --sidebar-foreground: theme("colors.gray.900");
+    --sidebar-primary: theme("colors.blue.500");
+    --sidebar-primary-foreground: theme("colors.white.50");
+    --sidebar-accent: theme("colors.gray.300");
+    --sidebar-accent-foreground: theme("colors.gray.700");
+    --sidebar-border: theme("colors.gray.400");
+    --sidebar-ring: theme("colors.blue.500");
+  }
+  
 
   .dark {
     --sidebar-background: theme("colors.customgreys.primarybg");
@@ -636,6 +668,9 @@ input[type="color"] {
 .course__tabs {
   @apply w-full md:w-2/3;
 }
+.course__tab[data-state="active"] {
+  border-bottom: 2px solid theme("colors.secondary.700");
+}
 
 .course__tabs-list {
   @apply flex justify-start gap-10;
@@ -1199,9 +1234,7 @@ input[type="color"] {
 }
 
 /* NonDashboard Navbar */
-.nondashboard-navbar {
-  @apply w-full flex justify-center bg-customgreys-primarybg;
-}
+
 
 .nondashboard-navbar__container {
   @apply flex justify-between items-center w-3/4 py-8;
@@ -1212,7 +1245,7 @@ input[type="color"] {
 }
 
 .nondashboard-navbar__brand {
-  @apply font-bold text-lg sm:text-xl hover:text-customgreys-dirtyGrey;
+  @apply font-bold text-4xl sm:text-xl hover:text-customgreys-dirtyGrey;
 }
 
 .nondashboard-navbar__search-input {

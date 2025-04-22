@@ -44,6 +44,29 @@ const chapterSchema = new Schema({
   video: {
     type: String,
   },
+  teacherNotes: {
+    type: String,
+  },
+  freePreview: {
+    type: Boolean,
+    default: false,
+  },
+  resources: {
+    type: Array,
+    schema: [new Schema({
+      title: {
+        type: String,
+        required: true,
+      },
+      url: {
+        type: String,
+        required: true,
+      },
+      description: {
+        type: String,
+      },
+    })],
+  },
 });
 
 const sectionSchema = new Schema({
@@ -104,7 +127,17 @@ const courseSchema = new Schema(
     status: {
       type: String,
       required: true,
-      enum: ["Draft", "Published"],
+      enum: ["Draft","Pending", "Published", "Rejected"],
+      default: "Draft",
+      index: {
+        name: "statusIndex",
+        type: "global",
+        project: true, // проекция всех атрибутов
+        throughput: { read: 5, write: 5 }
+      }
+    },
+    adminComment: {
+      type: String,
     },
     sections: {
       type: Array,

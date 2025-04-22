@@ -13,6 +13,7 @@ import {
   requireAuth,
 } from "@clerk/express";
 // /* ROUTE IMPORTS */
+import adminRoutes from "./routes/adminRoutes"; 
 import courseRoutes from "./routes/courseRoutes";
 import userClerkRoutes from "./routes/userClerkRoutes";
 import transactionRoutes from "./routes/transactionRoutes";
@@ -38,6 +39,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 app.use(clerkMiddleware());
+app.use("/admin", requireAuth(), adminRoutes);
 
 /* ROUTES */
 app.get("/", (req, res) => {

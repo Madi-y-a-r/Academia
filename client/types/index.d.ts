@@ -100,13 +100,37 @@ declare global {
     timestamp: string;
   }
 
+  interface Quiz {
+    quizId: string;
+    title: string;
+    description?: string;
+    questions: Array<{
+      questionId: string;
+      questionText: string;
+      options: Array<{
+        optionId: string;
+        text: string;
+        isCorrect: boolean;
+      }>;
+      explanation?: string;
+    }>;
+    passingScore: number;
+  }
+
   interface Chapter {
     chapterId: string;
     title: string;
     content: string;
     video?: string | File;
     freePreview?: boolean;
-    type: "Text" | "Quiz" | "Video";
+    type: "Text" | "Video";
+    // quizzes?: Quiz[]; 
+    teacherNotes?: string;
+    resources?: {
+      title: string;
+      url: string;
+      description?: string;
+    }[];
   }
 
   interface ChapterProgress {
@@ -171,6 +195,16 @@ declare global {
     onCategoryChange: (category: string) => void;
   }
 
+  interface QuizModalProps {
+    isOpen: boolean;
+    onClose: () => void;
+    sectionIndex: number | null;
+    chapterIndex: number | null;
+    quizIndex: number | null;
+    sections: Section[];
+    setSections: React.Dispatch<React.SetStateAction<Section[]>>;
+    courseId: string;
+  }
   interface ChapterModalProps {
     isOpen: boolean;
     onClose: () => void;

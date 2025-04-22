@@ -13,9 +13,15 @@ export type CourseFormData = z.infer<typeof courseSchema>;
 
 // Chapter Schemas
 export const chapterSchema = z.object({
-  title: z.string().min(2, "Title must be at least 2 characters"),
-  content: z.string().min(10, "Content must be at least 10 characters"),
-  video: z.union([z.string(), z.instanceof(File)]).optional(),
+  title: z.string().min(1, "Название раздела обязательно"),
+  content: z.string().min(1, "Содержание раздела обязательно"),
+  video: z.any().optional(),
+  teacherNotes: z.string().optional(),
+  resources: z.array(z.object({
+    title: z.string(),
+    url: z.string().url(),
+    description: z.string().optional(),
+  })).optional(),
 });
 
 export type ChapterFormData = z.infer<typeof chapterSchema>;
@@ -46,3 +52,25 @@ export const notificationSettingsSchema = z.object({
 export type NotificationSettingsFormData = z.infer<
   typeof notificationSettingsSchema
 >;
+
+export const quizSchema = z.object({
+  title: z.string().min(1, { message: "Quiz title is required" }),
+  description: z.string().optional(),
+  questions: z.array(
+    z.object({
+      questionId: z.string(),
+      questionText: z.string().min(1, { message: "Question text is required" }),
+      options: z.array(
+        z.object({
+          optionId: z.string(),
+          text: z.string().min(1, { message: "Option text is required" }),
+          isCorrect: z.boolean(),
+        })
+      ).min(2, { message: "At least two options are required" }),
+      explanation: z.string().optional(),
+    })
+  ).min(1, { message: "At least one question is required" }),
+  passingScore: z.number().min(0).max(100),
+});
+
+export type QuizFormData = z.infer<typeof quizSchema>;

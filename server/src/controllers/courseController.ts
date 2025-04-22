@@ -10,12 +10,19 @@ export const listCourses = async (
   req: Request,
   res: Response
 ): Promise<void> => {
-  const { category } = req.query;
+  const { category, status  } = req.query;
   try {
-    const courses =
-      category && category !== "all"
-        ? await Course.scan("category").eq(category).exec()
-        : await Course.scan().exec();
+    let query = Course.scan();
+    
+    if (category && category !== "all") {
+      query = query.where("category").eq(category);
+    }
+    
+    if (status) {
+      query = query.where("status").eq(status);
+    }
+
+    const courses = await query.exec();
     res.json({ message: "Courses retrieved successfully", data: courses });
   } catch (error) {
     res.status(500).json({ message: "Error retrieving courses", error });
@@ -129,6 +136,71 @@ export const updateCourse = async (
     res.status(500).json({ message: "Error updating course", error });
   }
 };
+
+export const submitCourseForReview = async (req: Request, res: Response): Promise<void> => {
+  const { courseId } = req.params;
+  const { userId } = getAuth(req);
+
+  try {
+    const course = await Course.get(courseId);
+    if (!course) {
+      res.status(404).json({ message: "Course not found" });
+      return;
+    }
+
+    if (course.teacherId !== userId) {
+      res.status(403).json({ message: "Not authorized to submit this course" });
+      return;
+    }
+
+    if (course.status !== "Draft") {
+      res.status(400).json({ message: "Course already submitted or published" });
+      return;
+    }
+
+    await Course.update({ courseId }, { status: "Pending" });
+
+    res.json({ message: "Course submitted for review" });
+  } catch (error) {
+    res.status(500).json({ message: "Error submitting course for review", error });
+  }
+};
+
+
+export const moderateCourse = async (req: Request, res: Response): Promise<void> => {
+  const { courseId } = req.params;
+  const { action, comment } = req.body;
+  const { userId } = getAuth(req);
+  const adminIds = process.env.ADMIN_IDS ? process.env.ADMIN_IDS.split(",") : [];
+
+  try {
+    const isAdmin = userId ? adminIds.includes(userId) : false;
+    if (!isAdmin) {
+      res.status(403).json({ message: "Not authorized to moderate courses" });
+      return;
+    }
+
+    const course = await Course.get(courseId);
+    if (!course) {
+      res.status(404).json({ message: "Course not found" });
+      return;
+    }
+
+    if (course.status !== "Pending") {
+      res.status(400).json({ message: "Course is not pending review" });
+      return;
+    }
+
+    const newStatus = action === "approve" ? "Published" : "Rejected";
+
+    await Course.update({ courseId }, { status: newStatus, adminComment: comment || null });
+
+    res.json({ message: `Course ${newStatus}.` });
+  } catch (error) {
+    res.status(500).json({ message: "Error moderating course", error });
+  }
+};
+
 
 export const deleteCourse = async (
   req: Request,

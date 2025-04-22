@@ -9,6 +9,7 @@ import {
   getUploadVideoUrl,
 } from "../controllers/courseController";
 import { requireAuth } from "@clerk/express";
+import { submitCourseForReview } from "../controllers/courseController";
 
 const router = express.Router();
 const upload = multer({ storage: multer.memoryStorage() });
@@ -18,6 +19,7 @@ router.post("/", requireAuth(), createCourse);
 
 router.get("/:courseId", getCourse);
 router.put("/:courseId", requireAuth(), upload.single("image"), updateCourse);
+router.post("/:courseId/submit", submitCourseForReview); // Учитель отправляет курс на проверку
 router.delete("/:courseId", requireAuth(), deleteCourse);
 
 router.post(
