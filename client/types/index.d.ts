@@ -124,7 +124,13 @@ declare global {
     video?: string | File;
     freePreview?: boolean;
     type: "Text" | "Video";
-    quizzes?: Quiz[]; 
+    // quizzes?: Quiz[]; 
+    teacherNotes?: string;
+    resources?: {
+      title: string;
+      url: string;
+      description?: string;
+    }[];
   }
 
   interface ChapterProgress {

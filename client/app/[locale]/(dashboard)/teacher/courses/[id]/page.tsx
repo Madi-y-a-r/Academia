@@ -206,6 +206,7 @@ const CourseEditor = () => {
             </div>
           </div>
         </form>
+
       </Form>
 
       <ChapterModal />

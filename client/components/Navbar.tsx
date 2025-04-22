@@ -11,18 +11,20 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import { useLocale, useTranslations } from "next-intl";
 import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
+import SearchInput from "./SearchInput";
+import { useGetPublishedCoursesQuery } from "@/state/api";
 
 const Navbar = ({ isCoursePage }: { isCoursePage: boolean }) => {
   const router = useRouter();
   const { user } = useUser();
   const userRole = user?.publicMetadata?.userType as "student" | "teacher";
+  const { data: courses, isLoading, isError } = useGetPublishedCoursesQuery({});
   const t = useTranslations("Navbar")
- 
   const locale = useLocale();
-
   const handleGoHome = () => {
     router.push(`/${locale}/`)
   }
+  if(!courses) return undefined
   return (
     <nav className="dashboard-navbar">
       <div className="dashboard-navbar__container">
@@ -31,25 +33,16 @@ const Navbar = ({ isCoursePage }: { isCoursePage: boolean }) => {
             <SidebarTrigger className="dashboard-navbar__sidebar-trigger" />
           </div>
 
-          <div className="flex items-center gap-4">
-            <div className="relative group">
-              <Link
-                href="/search"
-                className={cn("dashboard-navbar__search-input", {
-                  "!bg-customgreys-secondarybg": isCoursePage,
-                })}
-                scroll={false}
-              >
-                <span className="hidden sm:inline">{t("searchCourses")}</span>
-                <span className="sm:hidden">{t("search")}</span>
-              </Link>
-              <BookOpen className="nondashboard-navbar__search-icon" size={18} />
-            </div>
+          <div className="flex items-center gap-4 w-[400px]">
+              <SearchInput
+                className="md:w-[50%] sm:w-[30%] bg-customgreys-primarybg rounded-md" 
+                suggestions={courses} 
+              />
           </div>
         </div>
 
         <div className="dashboard-navbar__actions">
-          <Button onClick={handleGoHome} size="lg" className="font-bold bg-primary-700 hover:bg-primary-800 px-4 py-2 rounded-md;">
+          <Button onClick={handleGoHome} size="lg" className=" font-bold bg-primary-700 hover:bg-primary-600 px-4 py-2 rounded-md;">
               <p>{t("Home")}</p>
               <LayoutDashboardIcon />
           </Button>
@@ -73,7 +66,6 @@ const Navbar = ({ isCoursePage }: { isCoursePage: boolean }) => {
                 userRole === "teacher" ? "/teacher/profile" : "/student/profile"
               }
             />
-            <p>{userRole}</p>
           </div>
         </div>
       </div>

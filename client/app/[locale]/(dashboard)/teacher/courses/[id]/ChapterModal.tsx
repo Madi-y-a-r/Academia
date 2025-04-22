@@ -42,6 +42,8 @@ const ChapterModal = () => {
       title: "",
       content: "",
       video: "",
+      teacherNotes: "",
+      resources: [],
     },
   });
 
@@ -51,12 +53,16 @@ const ChapterModal = () => {
         title: chapter.title,
         content: chapter.content,
         video: chapter.video || "",
+        teacherNotes: chapter.teacherNotes || "",
+        resources: chapter.resources || [],
       });
     } else {
       methods.reset({
         title: "",
         content: "",
         video: "",
+        teacherNotes: "",
+        resources: [],
       });
     }
   }, [chapter, methods]);
@@ -74,6 +80,8 @@ const ChapterModal = () => {
       content: data.content,
       type: data.video ? "Video" : "Text",
       video: data.video,
+      teacherNotes: data.teacherNotes,
+      resources: data.resources,
     };
 
     if (selectedChapterIndex === null) {
@@ -126,6 +134,63 @@ const ChapterModal = () => {
               type="textarea"
               placeholder={t("Write chapter content here")}
             />
+
+            <CustomFormField
+              name="teacherNotes"
+              label={t("Teacher Notes")}
+              type="textarea"
+              placeholder={t("Add notes for students here")}
+            />
+
+            <div className="space-y-4">
+              <h3 className="text-lg font-medium">{t("Additional Resources")}</h3>
+              {methods.watch("resources")?.map((_, index) => (
+                <div key={index} className="space-y-2 p-4 border rounded-lg">
+                  <CustomFormField
+                    name={`resources.${index}.title`}
+                    label={t("Resource Title")}
+                    placeholder={t("Enter resource title")}
+                  />
+                  <CustomFormField
+                    name={`resources.${index}.url`}
+                    label={t("Resource URL")}
+                    placeholder={t("Enter resource URL")}
+                  />
+                  <CustomFormField
+                    name={`resources.${index}.description`}
+                    label={t("Resource Description")}
+                    type="textarea"
+                    placeholder={t("Enter resource description")}
+                  />
+                  <Button
+                    type="button"
+                    variant="destructive"
+                    onClick={() => {
+                      const resources = methods.getValues("resources") || [];
+                      methods.setValue(
+                        "resources",
+                        resources.filter((_, i) => i !== index)
+                      );
+                    }}
+                  >
+                    {t("Remove Resource")}
+                  </Button>
+                </div>
+              ))}
+              <Button
+                type="button"
+                variant="outline"
+                onClick={() => {
+                  const resources = methods.getValues("resources") || [];
+                  methods.setValue("resources", [
+                    ...resources,
+                    { title: "", url: "", description: "" },
+                  ]);
+                }}
+              >
+                {t("Add Resource")}
+              </Button>
+            </div>
 
             <FormField
               control={methods.control}

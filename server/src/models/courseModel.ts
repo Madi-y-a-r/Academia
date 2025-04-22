@@ -44,6 +44,29 @@ const chapterSchema = new Schema({
   video: {
     type: String,
   },
+  teacherNotes: {
+    type: String,
+  },
+  freePreview: {
+    type: Boolean,
+    default: false,
+  },
+  resources: {
+    type: Array,
+    schema: [new Schema({
+      title: {
+        type: String,
+        required: true,
+      },
+      url: {
+        type: String,
+        required: true,
+      },
+      description: {
+        type: String,
+      },
+    })],
+  },
 });
 
 const sectionSchema = new Schema({

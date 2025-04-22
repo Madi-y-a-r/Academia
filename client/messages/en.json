@@ -16,7 +16,8 @@
         "Billing": "Billing",
         "Profile": "Profile",
         "Settings": "Settings",
-        "Sign out": "Sign out"
+        "Sign out": "Sign out",
+        "Meetings": "Meetings"
     },
     "Landing": {
         "title": "Courses",
@@ -100,11 +101,23 @@
             "Chapter Content": "Chapter Content",
             "Write chapter content here": "Write chapter content here",
             "Chapter Video": "Chapter Video",
-            "Current video:": "Current video:",
-            "Selected file:": "Selected file:",
+            "Current video": "Current video",
+            "Selected file": "Selected file",
             "Cancel": "Cancel",
+            "Current video:": "Current video:",
             "Save": "Save",
-            "Add Chapter": "Add Chapter"
+            "Add Chapter": "Add Chapter",
+            "Teacher Notes": "Teacher Notes",
+            "Add notes for students here": "Add notes for students here",
+            "Additional Resources": "Additional Resources",
+            "Resource Title": "Resource Title",
+            "Enter resource title": "Enter resource title",
+            "Resource URL": "Resource URL",
+            "Enter resource URL": "Enter resource URL",
+            "Resource Description": "Resource Description",
+            "Enter resource description": "Enter resource description",
+            "Remove Resource": "Remove Resource",
+            "Add Resource": "Add Resource"
         },
         "Quiz": {
             "Add/Edit Quiz": "Add/Edit Quiz",

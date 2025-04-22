@@ -8,10 +8,8 @@ import {
   setSections,
   deleteSection,
   deleteChapter,
-  deleteQuiz,
   openSectionModal,
   openChapterModal,
-  openQuizModal,
 } from "@/state";
 import { useTranslations } from "next-intl";
 
@@ -232,24 +230,6 @@ const ChapterItem = ({
             className="droppable-chapter__button"
             onClick={() =>
               dispatch(
-                openQuizModal({
-                  sectionIndex,
-                  chapterIndex,
-                  quizIndex: null,
-                })
-              )
-            }
-            title="Add Quiz"
-          >
-            <HelpCircle className="h-4 w-4" />
-          </Button>
-          <Button
-            type="button"
-            variant="ghost"
-            size="sm"
-            className="droppable-chapter__button"
-            onClick={() =>
-              dispatch(
                 openChapterModal({
                   sectionIndex,
                   chapterIndex,
@@ -279,7 +259,7 @@ const ChapterItem = ({
       </div>
       
       {/* Display quizzes for this chapter */}
-      {chapter.quizzes && chapter.quizzes.length > 0 && (
+      {/* {chapter.quizzes && chapter.quizzes.length > 0 && (
         <div className="chapter-quizzes pl-8">
           {chapter.quizzes.map((quiz, quizIndex) => (
             <div
@@ -329,7 +309,7 @@ const ChapterItem = ({
             </div>
           ))}
         </div>
-      )}
+      )} */}
     </div>
   );
 };

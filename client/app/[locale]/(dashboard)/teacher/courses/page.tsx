@@ -79,7 +79,7 @@ const Courses = () => {
         rightElement={
           <Button
             onClick={handleCreateCourse}
-            className="teacher-courses__header"
+            className="bg-primary-700 hover:bg-primary-600"
           >
             {t("create")}
           </Button>

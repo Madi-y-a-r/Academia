@@ -45,7 +45,6 @@ const Course = () => {
   if (isLoading) return <Loading />;
   if (!user) return <div>Please sign in to view this course.</div>;
   if (!course || !userProgress) return <div>Error loading course</div>;
-
   return (
     <div className="course">
       <div className="course__container">
@@ -123,7 +122,7 @@ const Course = () => {
                   <CardTitle>Notes Content</CardTitle>
                 </CardHeader>
                 <CardContent className="course__tab-body">
-                  {currentChapter?.content}
+                  {currentChapter?.teacherNotes}
                 </CardContent>
               </Card>
             </TabsContent>
@@ -134,7 +133,15 @@ const Course = () => {
                   <CardTitle>Resources Content</CardTitle>
                 </CardHeader>
                 <CardContent className="course__tab-body">
-                  {currentChapter?.title}
+                  {currentChapter?.resources?.map((resource) => (
+                    <div key={resource.title}>
+                      <h3>{resource.title}</h3>
+                      <p>{resource.description}</p>
+                      <a href={resource.url} target="_blank" rel="noopener noreferrer">
+                        {resource.url}
+                      </a>
+                    </div>
+                  ))}
                 </CardContent>
               </Card>
             </TabsContent>

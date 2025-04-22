@@ -54,21 +54,21 @@ export const globalSlice = createSlice({
       state.courseEditor.isSectionModalOpen = false;
       state.courseEditor.selectedSectionIndex = null;
     },
-    openQuizModal: (
-      state,
-      action: PayloadAction<{ sectionIndex: number | null; chapterIndex: number | null; quizIndex: number | null }>
-    ) => {
-      state.courseEditor.isQuizModalOpen = true;
-      state.courseEditor.selectedSectionIndex = action.payload.sectionIndex;
-      state.courseEditor.selectedChapterIndex = action.payload.chapterIndex;
-      state.courseEditor.selectedQuizIndex = action.payload.quizIndex;
-    },
-    closeQuizModal: (state) => {
-      state.courseEditor.isQuizModalOpen = false;
-      state.courseEditor.selectedSectionIndex = null;
-      state.courseEditor.selectedChapterIndex = null;
-      state.courseEditor.selectedQuizIndex = null;
-    },
+    // openQuizModal: (
+    //   state,
+    //   action: PayloadAction<{ sectionIndex: number | null; chapterIndex: number | null; quizIndex: number | null }>
+    // ) => {
+    //   state.courseEditor.isQuizModalOpen = true;
+    //   state.courseEditor.selectedSectionIndex = action.payload.sectionIndex;
+    //   state.courseEditor.selectedChapterIndex = action.payload.chapterIndex;
+    //   state.courseEditor.selectedQuizIndex = action.payload.quizIndex;
+    // },
+    // closeQuizModal: (state) => {
+    //   state.courseEditor.isQuizModalOpen = false;
+    //   state.courseEditor.selectedSectionIndex = null;
+    //   state.courseEditor.selectedChapterIndex = null;
+    //   state.courseEditor.selectedQuizIndex = null;
+    // },
 
     // === SECTIONS ===
     addSection: (state, action: PayloadAction<Section>) => {
@@ -93,37 +93,37 @@ export const globalSlice = createSlice({
     },
 
     // === QUIZZES ===
-    addQuiz: (
-      state,
-      action: PayloadAction<{ sectionIndex: number; chapterIndex: number; quiz: Quiz }>
-    ) => {
-      const { sectionIndex, chapterIndex, quiz } = action.payload;
-      const chapter = state.courseEditor.sections[sectionIndex].chapters[chapterIndex];
+    // addQuiz: (
+    //   state,
+    //   action: PayloadAction<{ sectionIndex: number; chapterIndex: number; quiz: Quiz }>
+    // ) => {
+    //   const { sectionIndex, chapterIndex, quiz } = action.payload;
+    //   const chapter = state.courseEditor.sections[sectionIndex].chapters[chapterIndex];
 
-      if (!chapter.quizzes) {
-        chapter.quizzes = [];
-      }
+    //   if (!chapter.quizzes) {
+    //     chapter.quizzes = [];
+    //   }
 
-      chapter.quizzes.push(quiz);
-    },
+    //   chapter.quizzes.push(quiz);
+    // },
 
-    editQuiz: (
-      state,
-      action: PayloadAction<{ sectionIndex: number; chapterIndex: number; quizIndex: number; quiz: Quiz }>
-    ) => {
-      const quizzes = state.courseEditor.sections[action.payload.sectionIndex].chapters[action.payload.chapterIndex].quizzes;
-      if (quizzes) {
-        quizzes[action.payload.quizIndex] = action.payload.quiz;
-      }
-    },
+    // editQuiz: (
+    //   state,
+    //   action: PayloadAction<{ sectionIndex: number; chapterIndex: number; quizIndex: number; quiz: Quiz }>
+    // ) => {
+    //   const quizzes = state.courseEditor.sections[action.payload.sectionIndex].chapters[action.payload.chapterIndex].quizzes;
+    //   if (quizzes) {
+    //     quizzes[action.payload.quizIndex] = action.payload.quiz;
+    //   }
+    // },
 
-    deleteQuiz: (
-      state,
-      action: PayloadAction<{ sectionIndex: number; chapterIndex: number; quizIndex: number }>
-    ) => {
-      const { sectionIndex, chapterIndex, quizIndex } = action.payload;
-      state.courseEditor.sections[sectionIndex].chapters[chapterIndex].quizzes?.splice(quizIndex, 1);
-    },
+    // deleteQuiz: (
+    //   state,
+    //   action: PayloadAction<{ sectionIndex: number; chapterIndex: number; quizIndex: number }>
+    // ) => {
+    //   const { sectionIndex, chapterIndex, quizIndex } = action.payload;
+    //   state.courseEditor.sections[sectionIndex].chapters[chapterIndex].quizzes?.splice(quizIndex, 1);
+    // },
   },
 });
 
@@ -133,17 +133,17 @@ export const {
   closeChapterModal,
   openSectionModal,
   closeSectionModal,
-  openQuizModal,
-  closeQuizModal,
+  // openQuizModal,
+  // closeQuizModal,
   addSection,
   editSection,
   deleteSection,
   addChapter,
   editChapter,
   deleteChapter,
-  addQuiz,
-  editQuiz,
-  deleteQuiz,
+  // addQuiz,
+  // editQuiz,
+  // deleteQuiz,
 } = globalSlice.actions;
 
 export default globalSlice.reducer;

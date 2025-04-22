@@ -16,7 +16,8 @@
         "Billing": "Оплата",
         "Profile": "Профиль",
         "Settings": "Настройки",
-        "Sign out": "Выйти"
+        "Sign out": "Выйти",
+        "Meetings": "Встречи"
     },
     "Landing": {
         "title": "Курсы",
@@ -100,11 +101,23 @@
             "Chapter Content": "Содержание главы",
             "Write chapter content here": "Введите содержание главы здесь",
             "Chapter Video": "Видео главы",
-            "Current video:": "Текущее видео:",
-            "Selected file:": "Выбранный файл:",
+            "Current video": "Текущее видео",
+            "Selected file": "Выбранный файл",
             "Cancel": "Отмена",
+            "Current video:": "Текущее видео:",
             "Save": "Сохранить",
-            "Add Chapter": "Добавить главу"
+            "Add Chapter": "Добавить главу",
+            "Teacher Notes": "Заметки преподавателя",
+            "Add notes for students here": "Добавьте заметки для студентов",
+            "Additional Resources": "Дополнительные материалы",
+            "Resource Title": "Название ресурса",
+            "Enter resource title": "Введите название ресурса",
+            "Resource URL": "URL ресурса",
+            "Enter resource URL": "Введите URL ресурса",
+            "Resource Description": "Описание ресурса",
+            "Enter resource description": "Введите описание ресурса",
+            "Remove Resource": "Удалить ресурс",
+            "Add Resource": "Добавить ресурс"
         },
         "Quiz": {
             "Add/Edit Quiz": "Добавить/Редактировать тест",

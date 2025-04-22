@@ -70,7 +70,7 @@ const TeacherCourseCard = ({
             <>
               <div>
                 <Button
-                  className="course-card-teacher__edit-button"
+                  className="rounded w-full bg-primary-700 border-none hover:bg-primary-600 hover:text-customgreys-primarybg text-white-100 cursor-pointer"
                   onClick={() => onEdit(course)}
                 >
                   <Pencil className="w-4 h-4 mr-2" />
@@ -79,7 +79,7 @@ const TeacherCourseCard = ({
               </div>
               <div>
                 <Button
-                  className="course-card-teacher__delete-button"
+                  className="rounded w-full bg-red-600 text-white-100 hover:bg-red-400 hover:text-customgreys-primarybg cursor-pointer"
                   onClick={() => onDelete(course)}
                 >
                   <Trash2 className="w-4 h-4 mr-2" />

@@ -13,9 +13,15 @@ export type CourseFormData = z.infer<typeof courseSchema>;
 
 // Chapter Schemas
 export const chapterSchema = z.object({
-  title: z.string().min(2, "Title must be at least 2 characters"),
-  content: z.string().min(10, "Content must be at least 10 characters"),
-  video: z.union([z.string(), z.instanceof(File)]).optional(),
+  title: z.string().min(1, "Название раздела обязательно"),
+  content: z.string().min(1, "Содержание раздела обязательно"),
+  video: z.any().optional(),
+  teacherNotes: z.string().optional(),
+  resources: z.array(z.object({
+    title: z.string(),
+    url: z.string().url(),
+    description: z.string().optional(),
+  })).optional(),
 });
 
 export type ChapterFormData = z.infer<typeof chapterSchema>;
