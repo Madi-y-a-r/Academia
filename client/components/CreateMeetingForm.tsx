@@ -6,7 +6,11 @@ import { useTranslations } from "next-intl";
 import { useUser } from "@clerk/nextjs";
 import { useCreateMeetingMutation } from "@/state/api";
 
-export default function CreateMeetingForm() {
+interface CreateMeetingFormProps {
+  courseId: string;
+}
+
+export default function CreateMeetingForm({ courseId }: CreateMeetingFormProps) {
   const t = useTranslations("Meetings");
   const { user } = useUser();
   const [createMeeting] = useCreateMeetingMutation();
@@ -21,8 +25,12 @@ export default function CreateMeetingForm() {
     e.preventDefault();
     try {
       await createMeeting({
-        teacherId: user?.id,
-        ...formData
+        courseId,
+        title: formData.title,
+        description: formData.description,
+        scheduledStartTime: formData.startTime,
+        scheduledEndTime: formData.endTime,
+        meetUrl: "" // URL будет сгенерирован на сервере
       }).unwrap();
     } catch (error) {
       console.error('Failed to create meeting:', error);

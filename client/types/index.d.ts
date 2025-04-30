@@ -247,14 +247,12 @@ declare global {
     teacherId: string;
     title: string;
     description?: string;
+    startTime: string;
+    endTime: string;
     meetUrl: string;
-    scheduledStartTime: string;
-    scheduledEndTime: string;
-    status: "Scheduled" | "Active" | "Completed" | "Cancelled";
-    participants: Array<{
+    participants?: Array<{
       userId: string;
-      joinedAt?: string;
-      leftAt?: string;
+      email: string;
     }>;
   }
 }
