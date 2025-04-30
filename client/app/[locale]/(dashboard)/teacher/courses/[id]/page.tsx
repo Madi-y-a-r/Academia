@@ -26,6 +26,7 @@ import DroppableComponent from "./Droppable";
 import ChapterModal from "./ChapterModal";
 import SectionModal from "./SectionModal";
 import { useTranslations } from "next-intl";
+import PreviewCourseButton from "@/components/PreviewCourseButton";
 
 const CourseEditor = () => {
   const router = useRouter();
@@ -115,6 +116,8 @@ const CourseEditor = () => {
                   }`}
                   inputClassName="data-[state=checked]:bg-green-500"
                 />
+
+                <PreviewCourseButton courseId={id} />
                 <Button
                   type="submit"
                   className="bg-primary-700 hover:bg-primary-600"

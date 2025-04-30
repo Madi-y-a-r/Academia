@@ -61,7 +61,7 @@ const customBaseQuery = async (
 export const api = createApi({
   baseQuery: customBaseQuery,
   reducerPath: "api",
-  tagTypes: ["Courses", "Users", "UserCourseProgress"],
+  tagTypes: ["Courses", "Users", "UserCourseProgress", "Meetings"],
   endpoints: (build) => ({
     /* 
     ===============
@@ -154,6 +154,68 @@ export const api = createApi({
         method: "POST",
         body: { fileName, fileType },
       }),
+    }),
+    /* 
+    ===============
+    MEETINGS
+    =============== 
+    */
+    createMeeting: build.mutation<Meeting, {
+      courseId: string;
+      title: string;
+      description: string;
+      scheduledStartTime: string;
+      scheduledEndTime: string;
+      meetUrl: string;
+    }
+    >({
+    query: (meetingData) => ({
+      url: `meetings`,
+      method: "POST",
+      body: meetingData,
+    }),
+    }),
+
+    getCourseMeetings: build.query<Meeting[], string>({
+      query: (courseId) => `meetings/course/${courseId}`,
+      providesTags: ["Meetings"],
+    }),
+
+    getMeeting: build.query<Meeting, string>({
+    query: (meetingId) => `meetings/${meetingId}`,
+    providesTags: (result, error, id) => [{ type: "Meetings", id }],
+    }),
+
+    updateMeeting: build.mutation<
+      Meeting,
+      {
+        meetingId: string;
+        updateData: Partial<Meeting>;
+      }
+    >({
+    query: ({ meetingId, updateData }) => ({
+      url: `meetings/${meetingId}`,
+      method: "PUT",
+      body: updateData,
+    }),
+    invalidatesTags: (result, error, { meetingId }) => [
+      { type: "Meetings", id: meetingId },
+    ],
+    }),
+
+    deleteMeeting: build.mutation<{ message: string }, string>({
+    query: (meetingId) => ({
+      url: `meetings/${meetingId}`,
+      method: "DELETE",
+    }),
+    invalidatesTags: ["Meetings"],
+    }),
+
+    joinMeeting: build.mutation<{ meetUrl: string }, string>({
+    query: (meetingId) => ({
+      url: `meetings/${meetingId}/join`,
+      method: "POST",
+    }),
     }),
 
     /* 
@@ -258,4 +320,10 @@ export const {
   useGetUserEnrolledCoursesQuery,
   useGetUserCourseProgressQuery,
   useUpdateUserCourseProgressMutation,
+  useCreateMeetingMutation,
+  useGetCourseMeetingsQuery,
+  useGetMeetingQuery,
+  useUpdateMeetingMutation,
+  useDeleteMeetingMutation,
+  useJoinMeetingMutation,
 } = api;

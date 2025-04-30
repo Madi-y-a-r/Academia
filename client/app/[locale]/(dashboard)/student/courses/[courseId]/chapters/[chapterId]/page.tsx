@@ -97,12 +97,12 @@ const Course = () => {
           </CardContent>
         </Card>
 
-        <div className="course__content">
+        <div className="flex gap-4 mt-12">
           <Tabs 
             onValueChange={setActiveTab}
             value={activeTab} 
             defaultValue="Notes" 
-            className="course__tabs"
+            className="w-full md:w-2/3"
           >
             <TabsList className="course__tabs-list">
               <TabsTrigger className="course__tab" value="Notes">
@@ -132,12 +132,19 @@ const Course = () => {
                 <CardHeader className="course__tab-header">
                   <CardTitle>Resources Content</CardTitle>
                 </CardHeader>
-                <CardContent className="course__tab-body">
+                <CardContent className="p-4 space-y-4">
                   {currentChapter?.resources?.map((resource) => (
-                    <div key={resource.title}>
-                      <h3>{resource.title}</h3>
-                      <p>{resource.description}</p>
-                      <a href={resource.url} target="_blank" rel="noopener noreferrer">
+                    <div key={resource.title} className="p-4 border rounded-lg transition-colors">
+                      <h3 className="text-lg font-semibold mb-2">{resource.title}</h3>
+                      {resource.description && (
+                        <p className="text-gray-600 mb-3">{resource.description}</p>
+                      )}
+                      <a 
+                        href={resource.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:text-blue-800 break-all"
+                      >
                         {resource.url}
                       </a>
                     </div>
