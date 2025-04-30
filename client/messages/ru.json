@@ -104,7 +104,6 @@
             "Current video": "Текущее видео",
             "Selected file": "Выбранный файл",
             "Cancel": "Отмена",
-            "Current video:": "Текущее видео:",
             "Save": "Сохранить",
             "Add Chapter": "Добавить главу",
             "Teacher Notes": "Заметки преподавателя",
@@ -140,6 +139,23 @@
             "Cancel": "Отмена",
             "Save": "Сохранить",
             "success": "Тест успешно сохранен!"
+        },
+        "Preview": {
+            "Back to Course Editor": "Вернуться к редактору курса",
+            "Student Preview Mode": "Режим предпросмотра для студентов",
+            "Notes": "Заметки",
+            "Resources": "Ресурсы",
+            "Quiz": "Тест",
+            "Notes Content": "Содержание заметок",
+            "Resources Content": "Содержание ресурсов",
+            "Quiz Content": "Содержание теста",
+            "Quiz content will be displayed here": "Здесь будет отображаться содержание теста",
+            "Senior UX Designer": "Старший UX-дизайнер",
+            "No video available for this chapter": "Для этой главы нет доступного видео",
+            "No notes available for this chapter": "Для этой главы нет доступных заметок",
+            "No resources available for this chapter": "Для этой главы нет доступных ресурсов.",
+            "Section": "Раздел",
+            "COMPLETED": "ЗАВЕРШЕНО"
         }
     },
     "TeacherSettingsPage": {
@@ -214,6 +230,23 @@
         "Course Content": "Содержание курса",
         "Enroll Now": "Записаться",
         "Price Details": "Детали стоимости",
-        "Total Amount": "Итоговая сумма"
+        "Total Amount": "Итоговая сумма",
+        "Resources": {
+            "Title": "Ресурсы",
+            "NoResources": "Нет доступных ресурсов для этой главы",
+            "ResourceTitle": "Название ресурса",
+            "ResourceDescription": "Описание ресурса",
+            "ResourceLink": "Ссылка на ресурс",
+            "OpenResource": "Открыть ресурс"
+        }
+    },
+    "Meetings": {
+        "createMeeting": "Создать встречу",
+        "joinMeeting": "Присоединиться",
+        "meetingTitle": "Название встречи",
+        "description": "Описание",
+        "startTime": "Время начала",
+        "endTime": "Время окончания",
+        "noMeetings": "Нет запланированных встреч"
     }
 }

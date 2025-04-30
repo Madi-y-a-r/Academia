@@ -216,6 +216,23 @@
         "Course Content": "Course Content",
         "Enroll Now": "Enroll Now",
         "Price Details": "Price Details",
-        "Total Amount": "Total Amount"
+        "Total Amount": "Total Amount",
+        "Resources": {
+            "Title": "Resources",
+            "NoResources": "No resources available for this chapter",
+            "ResourceTitle": "Resource Title",
+            "ResourceDescription": "Resource Description",
+            "ResourceLink": "Resource Link",
+            "OpenResource": "Open Resource"
+        }
+    },
+    "Meetings": {
+        "createMeeting": "Create Meeting",
+        "joinMeeting": "Join Meeting",
+        "meetingTitle": "Meeting Title",
+        "description": "Description",
+        "startTime": "Start Time",
+        "endTime": "End Time",
+        "noMeetings": "No Meetings"
     }
 }

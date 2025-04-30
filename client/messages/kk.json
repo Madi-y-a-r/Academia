@@ -213,8 +213,25 @@
         "Enrolled": "Тіркелген",
         "By": "Авторы",
         "Course Content": "Курс мазмұны",
-        "Enroll Now": "Тіркелу",
-        "Price Details": "Баға туралы мәлімет",
-        "Total Amount": "Жалпы сома"
+        "Enroll Now": "Қазір тіркелу",
+        "Price Details": "Баға мәліметтері",
+        "Total Amount": "Жалпы сома",
+        "Resources": {
+            "Title": "Ресурстар",
+            "NoResources": "Бұл тақырыпқа қатысты ресурстар жоқ",
+            "ResourceTitle": "Ресурс атауы",
+            "ResourceDescription": "Ресурс сипаттамасы",
+            "ResourceLink": "Ресурс сілтемесі",
+            "OpenResource": "Ресурсты ашу"
+        }
+    },
+    "Meetings": {
+        "createMeeting": "Кездесу жасау",
+        "joinMeeting": "Қосылу",
+        "meetingTitle": "Кездесу атауы",
+        "description": "Сипаттама",
+        "startTime": "Басталу уақыты",
+        "endTime": "Аяқталу уақыты",
+        "noMeetings": "Кездесу жоқ"
     }
 }

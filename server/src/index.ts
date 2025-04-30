@@ -18,7 +18,7 @@ import courseRoutes from "./routes/courseRoutes";
 import userClerkRoutes from "./routes/userClerkRoutes";
 import transactionRoutes from "./routes/transactionRoutes";
 import userCourseProgressRoutes from "./routes/userCourseProgressRoutes";
-
+import meetingRoutes from "./routes/meetingRoutes";
 /* CONFIGURATIONS */
 dotenv.config();
 const isProduction = process.env.NODE_ENV === "production";
@@ -50,7 +50,7 @@ app.use("/courses", courseRoutes);
 app.use("/users/clerk", requireAuth(), userClerkRoutes);
 app.use("/transactions", requireAuth(), transactionRoutes);
 app.use("/users/course-progress", requireAuth(), userCourseProgressRoutes);
-
+app.use("/meetings", requireAuth(), meetingRoutes);
 /* SERVER */
 const port = process.env.PORT || 3000;
 if (!isProduction) {

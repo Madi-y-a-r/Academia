@@ -240,6 +240,23 @@ declare global {
     coursePrice: string;
     courseStatus: boolean;
   }
+
+  interface Meeting {
+    meetingId: string;
+    courseId: string;
+    teacherId: string;
+    title: string;
+    description?: string;
+    meetUrl: string;
+    scheduledStartTime: string;
+    scheduledEndTime: string;
+    status: "Scheduled" | "Active" | "Completed" | "Cancelled";
+    participants: Array<{
+      userId: string;
+      joinedAt?: string;
+      leftAt?: string;
+    }>;
+  }
 }
 
 export {};
