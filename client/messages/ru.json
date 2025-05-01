@@ -156,7 +156,9 @@
             "No resources available for this chapter": "Для этой главы нет доступных ресурсов.",
             "Section": "Раздел",
             "COMPLETED": "ЗАВЕРШЕНО"
-        }
+        },
+        "noCourses": "У вас пока нет курсов",
+        "createFirstCourse": "Создайте свой первый курс и начните делиться знаниями!"
     },
     "TeacherSettingsPage": {
         "title": "Настройки преподавателя",
@@ -165,7 +167,7 @@
     "StudentCoursesPage": {
         "title": "Мои курсы",
         "subtitle": "Просмотр записанных курсов",
-        "No courses": "Вы еще не записались на курсы"
+        "No courses": "У вас пока нет курсов"
     },
     "StudentSettingsPage": {
         "title": "Настройки пользователя",
@@ -248,5 +250,9 @@
         "startTime": "Время начала",
         "endTime": "Время окончания",
         "noMeetings": "Нет запланированных встреч"
+    },
+    "Auth": {
+        "registerAsTeacher": "Зарегистрироваться как учитель",
+        "registerAsStudent": "Зарегистрироваться как студент"
     }
 }
