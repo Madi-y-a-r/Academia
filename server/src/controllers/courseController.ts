@@ -60,7 +60,7 @@ export const createCourse = async (
       courseId: uuidv4(),
       teacherId,
       teacherName,
-      title: "Untitled Course",
+      title: "New Course",
       description: "",
       category: "Uncategorized",
       image: "",
@@ -262,5 +262,25 @@ export const getUploadVideoUrl = async (
     });
   } catch (error) {
     res.status(500).json({ message: "Error generating upload URL", error });
+  }
+};
+
+export const getTeacherCourses = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  const { teacherId } = req.params;
+
+  try {
+    const courses = await Course.query("teacherId")
+      .eq(teacherId)
+      .exec();
+
+    res.json({
+      message: "Teacher courses retrieved successfully",
+      data: courses,
+    });
+  } catch (error) {
+    res.status(500).json({ message: "Error retrieving teacher courses", error });
   }
 };

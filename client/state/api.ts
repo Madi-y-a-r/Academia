@@ -302,6 +302,13 @@ export const api = createApi({
         }
       },
     }),
+
+    getTeacherCourses: build.query<Course[], string>({
+      query: (teacherId) => ({
+        url: `courses/teacher/${teacherId}`,
+      }),
+      providesTags: ["Courses"],
+    }),
   }),
 });
 
@@ -326,4 +333,5 @@ export const {
   useUpdateMeetingMutation,
   useDeleteMeetingMutation,
   useJoinMeetingMutation,
+  useGetTeacherCoursesQuery,
 } = api;

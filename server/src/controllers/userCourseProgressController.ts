@@ -21,6 +21,15 @@ export const getUserEnrolledCourses = async (
     const enrolledCourses = await UserCourseProgress.query("userId")
       .eq(userId)
       .exec();
+    
+    if (!enrolledCourses || enrolledCourses.length === 0) {
+      res.json({
+        message: "No enrolled courses found",
+        data: []
+      });
+      return;
+    }
+
     const courseIds = enrolledCourses.map((item: any) => item.courseId);
     const courses = await Course.batchGet(courseIds);
     res.json({
