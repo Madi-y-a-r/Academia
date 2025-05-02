@@ -1,3 +1,4 @@
+import ChangeRoleButton from "@/components/ChangeRoleButton";
 import Header from "@/components/Header";
 import { UserProfile } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
@@ -10,7 +11,10 @@ const UserProfilePage = () => {
   const path = `/${locale}/student/profile`
   return (
     <>
-      <Header title={t("title")} subtitle={t("subtitle")} />
+      <div className="flex justify-between items-center">
+        <Header title={t("title")} subtitle={t("subtitle")} />
+        <ChangeRoleButton />
+      </div>
       <UserProfile
         path={path}
         routing="path"

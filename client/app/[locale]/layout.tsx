@@ -18,7 +18,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "STUDYT",
+  title: "USTAZ",
   description: "Platform for learning everything!"
 };
 

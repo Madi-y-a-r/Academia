@@ -22,7 +22,7 @@
     "Landing": {
         "title": "Курстар",
         "subtitle1": "Бұл сіз тіркеле алатын курстар тізімі.",
-        "welcome": "Studyt қош келдіңіз!",
+        "welcome": "Ustaz-ға қош келдіңіз!",
         "subtitle2": "Қажетті уақытта және қалаған кезде курстар.",
         "buttonLabel": "Курстарды іздеу",
         "feautredTitle": "Танымал курстар",
@@ -233,5 +233,12 @@
         "startTime": "Басталу уақыты",
         "endTime": "Аяқталу уақыты",
         "noMeetings": "Кездесу жоқ"
+    },
+    "Auth": {
+        "registerAsTeacher": "Мұғалім ретінде тіркелу",
+        "registerAsStudent": "Студент ретінде тіркелу",
+        "updating": "Жаңартылуда...",
+        "changeToTeacher": "Мұғалім болу",
+        "changeToStudent": "Студент болу"
     }
 }

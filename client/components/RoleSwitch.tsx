@@ -12,14 +12,14 @@ export default function RoleSwitch() {
 
   const handleRoleChange = async (checked: boolean) => {
     setIsTeacher(checked);
-    if (!signUp) return;
-    
     try {
-      await signUp.update({
-        unsafeMetadata: {
-          userType: checked ? "teacher" : "student"
-        }
-      });
+      if (signUp?.createdSessionId) {
+        await signUp.update({
+          unsafeMetadata: {
+            userType: checked ? "teacher" : "student"
+          }
+        });
+      }
     } catch (error) {
       console.error("Error updating role:", error);
     }
@@ -32,7 +32,7 @@ export default function RoleSwitch() {
         checked={isTeacher}
         onCheckedChange={handleRoleChange}
       />
-      <Label htmlFor="role-switch">
+      <Label htmlFor="role-switch" className="text-white">
         {isTeacher ? t("registerAsTeacher") : t("registerAsStudent")}
       </Label>
     </div>
