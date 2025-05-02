@@ -35,7 +35,7 @@ const NonDashboardNavbar = () => {
       <div className="nondashboard-navbar__container">
         <div className="nondashboard-navbar__search">
           <Link href="/" className="font-bold text-3xl  hover:text-customgreys-dirtyGrey" scroll={false}>
-            Studyt
+            Ustaz
           </Link>
           <div className="flex items-center gap-4 w-[400px]">
             <SearchInput
