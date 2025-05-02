@@ -13,6 +13,7 @@ import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
 import SearchInput from "./SearchInput";
 import { useGetPublishedCoursesQuery } from "@/state/api";
+import ChangeRoleButton from "./ChangeRoleButton";
 
 const Navbar = ({ isCoursePage }: { isCoursePage: boolean }) => {
   const router = useRouter();
@@ -66,6 +67,7 @@ const Navbar = ({ isCoursePage }: { isCoursePage: boolean }) => {
                 userRole === "teacher" ? "/teacher/profile" : "/student/profile"
               }
             />
+            <p>{userRole}</p>
           </div>
         </div>
       </div>

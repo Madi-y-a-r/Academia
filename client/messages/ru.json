@@ -252,7 +252,10 @@
         "noMeetings": "Нет запланированных встреч"
     },
     "Auth": {
-        "registerAsTeacher": "Зарегистрироваться как учитель",
-        "registerAsStudent": "Зарегистрироваться как студент"
+        "registerAsTeacher": "Зарегистрироваться как преподаватель",
+        "registerAsStudent": "Зарегистрироваться как студент",
+        "updating": "Обновление...",
+        "changeToTeacher": "Стать преподавателем",
+        "changeToStudent": "Стать студентом"
     }
 }

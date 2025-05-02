@@ -234,5 +234,12 @@
         "startTime": "Start Time",
         "endTime": "End Time",
         "noMeetings": "No Meetings"
+    },
+    "Auth": {
+        "registerAsTeacher": "Register as Teacher",
+        "registerAsStudent": "Register as Student",
+        "updating": "Updating...",
+        "changeToTeacher": "Become a Teacher",
+        "changeToStudent": "Become a Student"
     }
 }

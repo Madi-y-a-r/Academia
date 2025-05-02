@@ -1,4 +1,7 @@
+export type Roles = "admin" | "teacher" | "student"
+
 declare global {
+  
   interface PaymentMethod {
     methodId: string;
     type: string;
@@ -21,7 +24,7 @@ declare global {
     username?: string;
     email: string;
     publicMetadata: {
-      userType: "teacher" | "student";
+      userType: Roles;
     };
     privateMetadata: {
       settings?: UserSettings;

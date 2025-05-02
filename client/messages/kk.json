@@ -233,5 +233,12 @@
         "startTime": "Басталу уақыты",
         "endTime": "Аяқталу уақыты",
         "noMeetings": "Кездесу жоқ"
+    },
+    "Auth": {
+        "registerAsTeacher": "Мұғалім ретінде тіркелу",
+        "registerAsStudent": "Студент ретінде тіркелу",
+        "updating": "Жаңартылуда...",
+        "changeToTeacher": "Мұғалім болу",
+        "changeToStudent": "Студент болу"
     }
 }
