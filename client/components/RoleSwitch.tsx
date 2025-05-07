@@ -16,7 +16,8 @@ export default function RoleSwitch() {
       if (signUp?.createdSessionId) {
         await signUp.update({
           unsafeMetadata: {
-            userType: checked ? "teacher" : "student"
+            userType: checked ? "teacher" : "student",
+            bio: ""
           }
         });
       }

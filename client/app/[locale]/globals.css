@@ -666,10 +666,10 @@ input[type="color"] {
 }
 
 .course__tabs {
-  @apply w-full md:w-2/3;
+  @apply w-full md:w-2/3 rounded-none;
 }
 .course__tab[data-state="active"] {
-  border-bottom: 2px solid theme("colors.secondary.700");
+  border-bottom: 2px solid theme("colors.primary.700");
 }
 
 .course__tabs-list {
@@ -677,7 +677,7 @@ input[type="color"] {
 }
 
 .course__tab {
-  @apply text-md w-20;
+  @apply text-md w-24 rounded-none;
 }
 
 .course__tab-content {

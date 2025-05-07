@@ -3,6 +3,7 @@ import { twMerge } from "tailwind-merge";
 import * as z from "zod";
 import { api } from "../state/api";
 import { toast } from "sonner";
+import { UserFormData } from "./schemas";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -308,6 +309,18 @@ export const createCourseFormData = (
   }));
 
   formData.append("sections", JSON.stringify(sectionsWithVideos));
+
+  return formData;
+};
+
+export const updateUserInfo = (
+  data: UserFormData,
+  userId: string,
+) => {
+  const formData = new FormData();
+  formData.append("name", data.userName);
+  formData.append("phone", data.userPhone);
+  formData.append("bio", data.userBio);
 
   return formData;
 };
