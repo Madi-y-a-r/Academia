@@ -10,7 +10,7 @@ export const listCourses = async (
   req: Request,
   res: Response
 ): Promise<void> => {
-  const { category, status  } = req.query;
+  const { category, status, teacherId } = req.query;
   try {
     let query = Course.scan();
     
@@ -20,6 +20,10 @@ export const listCourses = async (
     
     if (status) {
       query = query.where("status").eq(status);
+    }
+
+    if (teacherId) {
+      query = query.where("teacherId").eq(teacherId);
     }
 
     const courses = await query.exec();

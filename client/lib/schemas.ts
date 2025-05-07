@@ -11,6 +11,14 @@ export const courseSchema = z.object({
 
 export type CourseFormData = z.infer<typeof courseSchema>;
 
+export const userSchema = z.object({
+  userName: z.string().min(1, "Name is required"),
+  userPhone: z.string().min(1, "Phone is required"),
+  userBio: z.string().min(1, "Bio is required"),
+});
+
+export type UserFormData = z.infer<typeof userSchema>;
+
 // Chapter Schemas
 export const chapterSchema = z.object({
   title: z.string().min(1, "Название раздела обязательно"),

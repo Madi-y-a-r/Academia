@@ -9,6 +9,7 @@ import {
   useCreateCourseMutation,
   useDeleteCourseMutation,
   useGetCoursesQuery,
+  useGetTeacherCoursesQuery,
 } from "@/state/api";
 import { useUser } from "@clerk/nextjs";
 import { useTranslations } from "next-intl";
@@ -23,7 +24,7 @@ const Courses = () => {
     data: courses,
     isLoading,
     isError,
-  } = useGetCoursesQuery({ category: "all" });
+  } = useGetTeacherCoursesQuery({ teacherId: user?.id });
 
   const [createCourse] = useCreateCourseMutation();
   const [deleteCourse] = useDeleteCourseMutation();
@@ -61,7 +62,7 @@ const Courses = () => {
 
     const result = await createCourse({
       teacherId: user.id,
-      teacherName: user.fullName || t("Unknown Teacher"),
+      teacherName: user.fullName || t("Unknown Teacher")
     }).unwrap();
     router.push(`/teacher/courses/${result.courseId}`, {
       scroll: false,

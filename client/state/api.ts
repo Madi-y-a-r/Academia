@@ -68,6 +68,10 @@ export const api = createApi({
     USER CLERK
     =============== 
     */
+    getUser: build.query<User, string>({
+      query: (userId) => `users/clerk/${userId}`,
+      providesTags: (result, error, id) => [{ type: "Users", id }],
+    }),
     updateUser: build.mutation<User, Partial<User> & { userId: string }>({
       query: ({ userId, ...updatedUser }) => ({
         url: `users/clerk/${userId}`,
@@ -99,6 +103,16 @@ export const api = createApi({
       }),
       providesTags: ["Courses"],
     }),
+    getTeacherCourses: build.query<Course[], { category?: string, teacherId?: string }>({
+      query: ({ category, teacherId }) => ({
+        url: "courses",
+        params: { 
+          category,
+          teacherId,
+        },
+      }),
+      providesTags: ["Courses"],
+    }),
 
     getCourse: build.query<Course, string>({
       query: (id) => `courses/${id}`,
@@ -116,7 +130,6 @@ export const api = createApi({
       }),
       invalidatesTags: ["Courses"],
     }),
-
     updateCourse: build.mutation<
       Course,
       { courseId: string; formData: FormData }
@@ -302,17 +315,11 @@ export const api = createApi({
         }
       },
     }),
-
-    getTeacherCourses: build.query<Course[], string>({
-      query: (teacherId) => ({
-        url: `courses/teacher/${teacherId}`,
-      }),
-      providesTags: ["Courses"],
-    }),
   }),
 });
 
 export const {
+  useGetUserQuery,
   useUpdateUserMutation,
   useCreateCourseMutation,
   useUpdateCourseMutation,

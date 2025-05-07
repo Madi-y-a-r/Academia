@@ -16,7 +16,7 @@ declare global {
     courseNotifications?: boolean;
     notificationFrequency?: "immediate" | "daily" | "weekly";
   }
-
+  
   interface User {
     userId: string;
     firstName?: string;
@@ -42,6 +42,8 @@ declare global {
     courseId: string;
     teacherId: string;
     teacherName: string;
+    teacherTitle?: string;
+    teacherBio?: string;
     title: string;
     description?: string;
     category: string;
