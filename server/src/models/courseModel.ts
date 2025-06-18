@@ -154,6 +154,21 @@ const courseSchema = new Schema(
         }),
       ],
     },
+    averageRating: {
+      type: Number,
+      default: 0,
+      validate: (value: any) => typeof value === 'number' && value >= 0 && value <= 5,
+    },
+    ratingCount: {
+      type: Number,
+      default: 0,
+      validate: (value: any) => typeof value === 'number' && value >= 0,
+    },
+    ratingDistribution: {
+      type: Array,
+      schema: [Number], // [count1star, count2star, count3star, count4star, count5star]
+      default: [0, 0, 0, 0, 0],
+    },
   },
   {
     timestamps: true,

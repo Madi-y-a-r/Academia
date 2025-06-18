@@ -1,0 +1,122 @@
+[
+  {
+    "ratingId": "rating_1",
+    "courseId": "3a9f3d6c-c391-4b1c-9c3d-6c3f3d6c3f3d",
+    "userId": "user_2ntu96pUCljUV2T9W0AThzjacQB",
+    "userName": "John Smith",
+    "rating": 5,
+    "comment": "Отличный курс! Преподаватель объясняет сложные концепции четко, а практические примеры очень помогают. Я многому научился и чувствую уверенность в применении этих навыков в реальных проектах.",
+    "helpfulCount": 2,
+    "helpfulVotes": ["user_9xWp45MnKjL8vRt2Hs6BqDcEy", "user_5vBn23WsLkMp7Jh4Gt8FxYcRz"],
+    "createdAt": "2024-01-15T10:30:00.000Z",
+    "updatedAt": "2024-01-15T10:30:00.000Z"
+  },
+  {
+    "ratingId": "rating_2",
+    "courseId": "3a9f3d6c-c391-4b1c-9c3d-6c3f3d6c3f3d",
+    "userId": "user_9xWp45MnKjL8vRt2Hs6BqDcEy",
+    "userName": "Jane Doe",
+    "rating": 4,
+    "comment": "Отличный курс в целом. Контент хорошо структурирован и легко воспринимается. Хотелось бы больше продвинутых тем, но для начинающих идеально.",
+    "helpfulCount": 1,
+    "helpfulVotes": ["user_2ntu96pUCljUV2T9W0AThzjacQB"],
+    "createdAt": "2024-01-16T14:20:00.000Z",
+    "updatedAt": "2024-01-16T14:20:00.000Z"
+  },
+  {
+    "ratingId": "rating_3",
+    "courseId": "3a9f3d6c-c391-4b1c-9c3d-6c3f3d6c3f3d",
+    "userId": "user_5vBn23WsLkMp7Jh4Gt8FxYcRz",
+    "userName": "Mike Wilson",
+    "rating": 5,
+    "comment": "Превосходно! Этот курс превзошел мои ожидания. Практический подход и примеры из реального мира сделали обучение приятным и эффективным.",
+    "helpfulCount": 3,
+    "helpfulVotes": ["user_2ntu96pUCljUV2T9W0AThzjacQB", "user_9xWp45MnKjL8vRt2Hs6BqDcEy", "user_6tHm89QwNpKj3Fx5Vy2RdLcBs"],
+    "createdAt": "2024-01-17T09:15:00.000Z",
+    "updatedAt": "2024-01-17T09:15:00.000Z"
+  },
+  {
+    "ratingId": "rating_4",
+    "courseId": "8b4f7d9c-4b1c-4b1c-8b4f-7d9c8b4f7d9c",
+    "userId": "user_6tHm89QwNpKj3Fx5Vy2RdLcBs",
+    "userName": "Sarah Johnson",
+    "rating": 3,
+    "comment": "Приличный курс, но мог бы быть лучше. Темп немного медленный для меня, но контент точный.",
+    "helpfulCount": 0,
+    "helpfulVotes": [],
+    "createdAt": "2024-01-18T16:45:00.000Z",
+    "updatedAt": "2024-01-18T16:45:00.000Z"
+  },
+  {
+    "ratingId": "rating_5",
+    "courseId": "8b4f7d9c-4b1c-4b1c-8b4f-7d9c8b4f7d9c",
+    "userId": "user_2ntu96pUCljUV2T9W0AThzjacQB",
+    "userName": "David Brown",
+    "rating": 4,
+    "comment": "Хороший курс с практическими примерами. Преподаватель знающий и быстро отвечает на вопросы.",
+    "helpfulCount": 1,
+    "helpfulVotes": ["user_5vBn23WsLkMp7Jh4Gt8FxYcRz"],
+    "createdAt": "2024-01-19T11:30:00.000Z",
+    "updatedAt": "2024-01-19T11:30:00.000Z"
+  },
+  {
+    "ratingId": "rating_6",
+    "courseId": "c5d6e7f8-g9h0-i1j2-k3l4-m5n6o7p8q9r0",
+    "userId": "user_9xWp45MnKjL8vRt2Hs6BqDcEy",
+    "userName": "Emily Chen",
+    "rating": 4,
+    "comment": "Отличное введение в веб-разработку. Пошаговый подход идеален для начинающих.",
+    "helpfulCount": 2,
+    "helpfulVotes": ["user_6tHm89QwNpKj3Fx5Vy2RdLcBs", "user_5vBn23WsLkMp7Jh4Gt8FxYcRz"],
+    "createdAt": "2024-01-20T08:00:00.000Z",
+    "updatedAt": "2024-01-20T08:00:00.000Z"
+  },
+  {
+    "ratingId": "rating_7",
+    "courseId": "c5d6e7f8-g9h0-i1j2-k3l4-m5n6o7p8q9r0",
+    "userId": "user_5vBn23WsLkMp7Jh4Gt8FxYcRz",
+    "userName": "Robert Lee",
+    "rating": 5,
+    "comment": "Отличный курс веб-разработки! Четкие объяснения и практические проекты.",
+    "helpfulCount": 1,
+    "helpfulVotes": ["user_9xWp45MnKjL8vRt2Hs6BqDcEy"],
+    "createdAt": "2024-01-21T13:25:00.000Z",
+    "updatedAt": "2024-01-21T13:25:00.000Z"
+  },
+  {
+    "ratingId": "rating_8",
+    "courseId": "d4e5f6g7-h8i9-j0k1-l2m3-n4o5p6q7r8s9",
+    "userId": "user_6tHm89QwNpKj3Fx5Vy2RdLcBs",
+    "userName": "Maria Garcia",
+    "rating": 4,
+    "comment": "Хорошее введение в науку о данных. Могло бы быть больше практических упражнений.",
+    "helpfulCount": 0,
+    "helpfulVotes": [],
+    "createdAt": "2024-01-22T15:10:00.000Z",
+    "updatedAt": "2024-01-22T15:10:00.000Z"
+  },
+  {
+    "ratingId": "rating_9",
+    "courseId": "d4e5f6g7-h8i9-j0k1-l2m3-n4o5p6q7r8s9",
+    "userId": "user_2ntu96pUCljUV2T9W0AThzjacQB",
+    "userName": "Alex Rodriguez",
+    "rating": 5,
+    "comment": "Фантастический курс! Очень подробно и с отличными проектами. Рекомендую всем.",
+    "helpfulCount": 2,
+    "helpfulVotes": ["user_6tHm89QwNpKj3Fx5Vy2RdLcBs", "user_9xWp45MnKjL8vRt2Hs6BqDcEy"],
+    "createdAt": "2024-01-23T17:40:00.000Z",
+    "updatedAt": "2024-01-23T17:40:00.000Z"
+  },
+  {
+    "ratingId": "rating_10",
+    "courseId": "3a9f3d6c-c391-4b1c-9c3d-6c3f3d6c3f3d",
+    "userId": "user_6tHm89QwNpKj3Fx5Vy2RdLcBs",
+    "userName": "Lisa Wang",
+    "rating": 2,
+    "comment": "Курс неплохой, но не совсем то, что я ожидала. Слишком базовый для моего уровня.",
+    "helpfulCount": 0,
+    "helpfulVotes": [],
+    "createdAt": "2024-01-24T12:05:00.000Z",
+    "updatedAt": "2024-01-24T12:05:00.000Z"
+  }
+]

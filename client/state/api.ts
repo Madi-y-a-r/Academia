@@ -61,7 +61,7 @@ const customBaseQuery = async (
 export const api = createApi({
   baseQuery: customBaseQuery,
   reducerPath: "api",
-  tagTypes: ["Courses", "Users", "UserCourseProgress", "Meetings"],
+  tagTypes: ["Courses", "Users", "UserCourseProgress", "Meetings", "Ratings", "Rating"],
   endpoints: (build) => ({
     /* 
     ===============
@@ -315,6 +315,104 @@ export const api = createApi({
         }
       },
     }),
+
+    /* 
+    ===============
+    RATINGS
+    =============== 
+    */
+    getCourseRatings: build.query<
+      CourseRatingsResponse,
+      { 
+        courseId: string; 
+        page?: number; 
+        limit?: number; 
+        sortBy?: "createdAt" | "rating" | "helpful" 
+      }
+    >({
+      query: ({ courseId, page = 1, limit = 10, sortBy = "createdAt" }) => ({
+        url: `courses/${courseId}/ratings`,
+        params: { page, limit, sortBy },
+      }),
+      providesTags: (result, error, { courseId }) => [
+        { type: "Ratings", id: courseId },
+      ],
+    }),
+
+    getCourseRatingStats: build.query<RatingStatsResponse, string>({
+      query: (courseId) => `courses/${courseId}/ratings/stats`,
+      providesTags: (result, error, courseId) => [
+        { type: "Ratings", id: `${courseId}-stats` },
+      ],
+    }),
+
+    getUserRating: build.query<UserRatingResponse, string>({
+      query: (courseId) => `courses/${courseId}/ratings/my`,
+      providesTags: (result, error, courseId) => [
+        { type: "Ratings", id: `user-${courseId}` },
+      ],
+    }),
+
+    createOrUpdateRating: build.mutation<
+      Rating,
+      { courseId: string; rating: number; review?: string }
+    >({
+      query: ({ courseId, rating, review }) => ({
+        url: `courses/${courseId}/ratings`,
+        method: "POST",
+        body: { rating, comment: review },
+      }),
+      invalidatesTags: (result, error, { courseId }) => [
+        { type: "Ratings", id: courseId },
+        { type: "Ratings", id: `${courseId}-stats` },
+        { type: "Ratings", id: `user-${courseId}` },
+        { type: "Courses", id: courseId },
+      ],
+    }),
+
+    updateRating: build.mutation<
+      Rating,
+      { courseId: string; rating: number; review?: string }
+    >({
+      query: ({ courseId, rating, review }) => ({
+        url: `ratings/courses/${courseId}`,
+        method: "PUT",
+        body: { rating, review },
+      }),
+      invalidatesTags: (result, error, { courseId }) => [
+        { type: "Ratings", id: courseId },
+        { type: "Ratings", id: `${courseId}-stats` },
+        { type: "Ratings", id: `user-${courseId}` },
+        { type: "Courses", id: courseId },
+      ],
+    }),
+
+    deleteRating: build.mutation<{ message: string }, { courseId: string; ratingId: string }>({
+      query: ({ courseId, ratingId }) => ({
+        url: `courses/${courseId}/ratings/${ratingId}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: (result, error, { courseId }) => [
+        { type: "Ratings", id: courseId },
+        { type: "Ratings", id: `${courseId}-stats` },
+        { type: "Ratings", id: `user-${courseId}` },
+        { type: "Courses", id: courseId },
+      ],
+    }),
+
+    markRatingHelpful: build.mutation<
+      Rating,
+      { courseId: string; ratingId: string }
+    >({
+      query: ({ ratingId }) => ({
+        url: `ratings/${ratingId}/helpful`,
+        method: "POST",
+      }),
+      invalidatesTags: (result, error, { courseId }) => [
+        { type: "Ratings", id: courseId },
+      ],
+    }),
+
   }),
 });
 
@@ -339,6 +437,13 @@ export const {
   useGetMeetingQuery,
   useUpdateMeetingMutation,
   useDeleteMeetingMutation,
+  // Rating hooks
+  useGetCourseRatingsQuery,
+  useGetCourseRatingStatsQuery,
+  useGetUserRatingQuery,
+  useCreateOrUpdateRatingMutation,
+  useDeleteRatingMutation,
+  useMarkRatingHelpfulMutation,
   useJoinMeetingMutation,
   useGetTeacherCoursesQuery,
 } = api;

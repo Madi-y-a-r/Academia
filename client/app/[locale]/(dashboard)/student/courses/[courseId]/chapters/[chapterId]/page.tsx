@@ -9,6 +9,7 @@ import Loading from "@/components/Loading";
 import { useCourseProgressData } from "@/hooks/useCourseProgressData";
 import { useTranslation } from "react-i18next";
 import InstructorCard from "@/components/InstructorCard";
+import CourseReviews from "@/components/CourseReviews";
 
 const Course = () => {
   const {
@@ -114,6 +115,9 @@ const Course = () => {
               <TabsTrigger className="course__tab" value="Resources">
                 Resources
               </TabsTrigger>
+              <TabsTrigger className="course__tab" value="Reviews">
+                Reviews
+              </TabsTrigger>
               {/* <TabsTrigger className="course__tab" value="Quiz">
                 Quiz
               </TabsTrigger> */}
@@ -154,6 +158,14 @@ const Course = () => {
                   ))}
                 </CardContent>
               </Card>
+            </TabsContent>
+
+            <TabsContent className="course__tab-content" value="Reviews">
+              <CourseReviews 
+                courseId={course.courseId} 
+                isEnrolled={true}
+                isTeacher={course.teacherId === user?.id}
+              />
             </TabsContent>
 
             {/* <TabsContent className="course__tab-content" value="Quiz">
