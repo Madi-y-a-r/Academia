@@ -10,6 +10,7 @@ import pluralize from "pluralize";
 import Transaction from "../models/transactionModel";
 import Course from "../models/courseModel";
 import UserCourseProgress from "../models/userCourseProgressModel";
+import Rating from "../models/ratingModel";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -45,7 +46,7 @@ console.warn = (message, ...args) => {
 };
 
 async function createTables() {
-  const models = [Transaction, UserCourseProgress, Course];
+  const models = [Transaction, UserCourseProgress, Course, Rating];
 
   for (const model of models) {
     const tableName = model.name;

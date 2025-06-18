@@ -1,4 +1,4 @@
-export type Roles = "admin" | "teacher" | "student"
+export type Roles = "teacher" | "student"
 
 declare global {
   
@@ -55,6 +55,9 @@ declare global {
     enrollments?: Array<{
       userId: string;
     }>;
+    averageRating?: number;
+    ratingCount?: number;
+    ratingDistribution?: number[]; // [count1star, count2star, count3star, count4star, count5star]
   }
 
   interface Transaction {
@@ -210,6 +213,7 @@ declare global {
     setSections: React.Dispatch<React.SetStateAction<Section[]>>;
     courseId: string;
   }
+
   interface ChapterModalProps {
     isOpen: boolean;
     onClose: () => void;
@@ -259,6 +263,80 @@ declare global {
       userId: string;
       email: string;
     }>;
+  }
+
+  interface Rating {
+    ratingId: string;
+    courseId: string;
+    userId: string;
+    userName: string;
+    rating: number; // 1-5 stars
+    comment?: string;
+    helpfulCount: number;
+    helpfulVotes: string[]; // array of userIds
+    createdAt: string;
+    updatedAt: string;
+  }
+
+  interface RatingStats {
+    averageRating: number;
+    ratingCount: number;
+    ratingDistribution: number[]; // [count1star, count2star, count3star, count4star, count5star]
+  }
+
+  interface CourseRatingsResponse {
+    message: string;
+    data: {
+      ratings: Rating[];
+      totalCount: number;
+      currentPage: number;
+      totalPages: number;
+      hasNext: boolean;
+      hasPrev: boolean;
+    };
+  }
+
+  interface RatingStatsResponse {
+    message: string;
+    data: RatingStats;
+  }
+
+  interface UserRatingResponse {
+    message: string;
+    data: Rating | null;
+  }
+
+  interface StarRatingProps {
+    rating: number;
+    onRatingChange?: (rating: number) => void;
+    size?: "small" | "medium" | "large";
+    readonly?: boolean;
+  }
+
+  interface RatingStatsProps {
+    stats: RatingStats;
+    showDistribution?: boolean;
+  }
+
+  interface RatingFormProps {
+    courseId: string;
+    existingRating?: Rating;
+    onSubmit: (rating: number, comment: string) => void;
+    onCancel: () => void;
+    isLoading?: boolean;
+  }
+
+  interface RatingListProps {
+    ratings: Rating[];
+    onMarkHelpful: (ratingId: string) => void;
+    currentUserId?: string;
+    isLoading?: boolean;
+  }
+
+  interface CourseReviewsProps {
+    courseId: string;
+    isEnrolled?: boolean;
+    isTeacher?: boolean;
   }
 }
 

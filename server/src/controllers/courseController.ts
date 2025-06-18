@@ -171,39 +171,6 @@ export const submitCourseForReview = async (req: Request, res: Response): Promis
 };
 
 
-export const moderateCourse = async (req: Request, res: Response): Promise<void> => {
-  const { courseId } = req.params;
-  const { action, comment } = req.body;
-  const { userId } = getAuth(req);
-  const adminIds = process.env.ADMIN_IDS ? process.env.ADMIN_IDS.split(",") : [];
-
-  try {
-    const isAdmin = userId ? adminIds.includes(userId) : false;
-    if (!isAdmin) {
-      res.status(403).json({ message: "Not authorized to moderate courses" });
-      return;
-    }
-
-    const course = await Course.get(courseId);
-    if (!course) {
-      res.status(404).json({ message: "Course not found" });
-      return;
-    }
-
-    if (course.status !== "Pending") {
-      res.status(400).json({ message: "Course is not pending review" });
-      return;
-    }
-
-    const newStatus = action === "approve" ? "Published" : "Rejected";
-
-    await Course.update({ courseId }, { status: newStatus, adminComment: comment || null });
-
-    res.json({ message: `Course ${newStatus}.` });
-  } catch (error) {
-    res.status(500).json({ message: "Error moderating course", error });
-  }
-};
 
 
 export const deleteCourse = async (

@@ -2,6 +2,8 @@ import { formatPrice } from "@/lib/utils";
 import Image from "next/image";
 import React from "react";
 import AccordionSections from "./AccordionSections";
+import StarRating from "./StarRating";
+import CourseReviews from "./CourseReviews";
 import { useTranslations } from "next-intl";
 
 const CoursePreview = ({ course }: CoursePreviewProps) => {
@@ -21,7 +23,22 @@ const CoursePreview = ({ course }: CoursePreviewProps) => {
         </div>
         <div>
           <h2 className="course-preview__title">{course.title}</h2>
-          <p className="text-gray-400 text-md mb-4">{t("By")} {course.teacherName}</p>
+          <p className="text-gray-400 text-md mb-2">{t("By")} {course.teacherName}</p>
+          
+          {/* Rating */}
+          {course.averageRating !== undefined && course.ratingCount !== undefined && (
+            <div className="flex items-center gap-2 mb-4">
+              <StarRating 
+                rating={course.averageRating} 
+                readonly 
+                size="medium" 
+              />
+              <span className="text-sm text-gray-400">
+                {course.averageRating.toFixed(1)} ({course.ratingCount} {course.ratingCount === 1 ? 'review' : 'reviews'})
+              </span>
+            </div>
+          )}
+          
           <p className="text-sm text-customgreys-dirtyGrey">
             {course.description}
           </p>
@@ -47,6 +64,11 @@ const CoursePreview = ({ course }: CoursePreviewProps) => {
           <br />
           <span className="font-bold text-lg">{price}</span>
         </div>
+      </div>
+
+      {/* Reviews Section */}
+      <div className="course-preview__container">
+        <CourseReviews courseId={course.courseId} />
       </div>
     </div>
   );

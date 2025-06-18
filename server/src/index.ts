@@ -13,11 +13,12 @@ import {
   requireAuth,
 } from "@clerk/express";
 // /* ROUTE IMPORTS */
-import adminRoutes from "./routes/adminRoutes"; 
+ 
 import courseRoutes from "./routes/courseRoutes";
 import userClerkRoutes from "./routes/userClerkRoutes";
 import transactionRoutes from "./routes/transactionRoutes";
 import userCourseProgressRoutes from "./routes/userCourseProgressRoutes";
+import ratingRoutes from "./routes/ratingRoutes";
 import meetingRoutes from "./routes/meetingRoutes";
 /* CONFIGURATIONS */
 dotenv.config();
@@ -39,7 +40,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 app.use(clerkMiddleware());
-app.use("/admin", requireAuth(), adminRoutes);
 
 /* ROUTES */
 app.get("/", (req, res) => {
@@ -51,6 +51,7 @@ app.use("/users/clerk", requireAuth(), userClerkRoutes);
 app.use("/transactions", requireAuth(), transactionRoutes);
 app.use("/users/course-progress", requireAuth(), userCourseProgressRoutes);
 app.use("/meetings", requireAuth(), meetingRoutes);
+app.use("/", ratingRoutes);
 /* SERVER */
 const port = process.env.PORT || 3000;
 if (!isProduction) {

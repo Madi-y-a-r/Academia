@@ -48,11 +48,6 @@ const AppSidebar = () => {
       { icon: User, label: "Profile", href: "/teacher/profile" },
       { icon: Settings, label: "Settings", href: "/teacher/settings" },
     ],
-    admin: [
-      { icon: BookOpen, label: "Courses", href: "/admin/courses" },
-      { icon: User, label: "Profile", href: "/admin/profile" },
-      { icon: Settings, label: "Settings", href: "/admin/settings" },
-    ],
   };
 
   if (!isLoaded) return <Loading />;

@@ -9,6 +9,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import Image from "next/image";
 import placeholderImage from "@/public/placeholder.png"
 import { formatPrice } from "@/lib/utils";
+import StarRating from "./StarRating";
 
 const CourseCard = ({ course, onGoToCourse }: CourseCardProps) => {
   return (
@@ -40,6 +41,20 @@ const CourseCard = ({ course, onGoToCourse }: CourseCardProps) => {
             {course.teacherName}
           </p>
         </div>
+
+        {/* Rating */}
+        {course.averageRating !== undefined && course.ratingCount !== undefined && (
+          <div className="flex items-center gap-2 mt-2">
+            <StarRating 
+              rating={course.averageRating} 
+              readonly 
+              size="small" 
+            />
+            <span className="text-sm text-customgreys-dirtyGrey">
+              {course.averageRating.toFixed(1)} ({course.ratingCount} reviews)
+            </span>
+          </div>
+        )}
 
         <CardFooter className="course-card__footer">
           <div className="course-card__category">{course.category}</div>
